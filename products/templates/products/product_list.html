@@ -6,7 +6,7 @@
     <h3>products list</h3>
     <hr>
     {% for product in products %}
-        <h6>{{ product.title }}</h6>
+        <a style="text-decoration:none; color: black" href="{{ product.get_absolute_url }}"><h6>{{ product.title }}</h6></a>
         <p>{{ product.price }}</p>
         <hr>
     {% endfor %}
