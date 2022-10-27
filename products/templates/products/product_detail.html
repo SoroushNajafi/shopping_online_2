@@ -1,13 +1,239 @@
 {% extends '_base.html' %}
+{% load static %}
 
 {% block page_title %}Product detail{% endblock %}
 
 {% block content %}
-    <h3>products detail</h3>
-    <hr>
-    <h4>{{ product.title }}</h4>
-    <p>{{ product.description }}</p>
-    <p>price:{{ product.price }}</p>
-    <hr>
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 produti">
+                    <h4>products</h4>
+                </div>
+                <div class="col-md-2 cart">
+                    <h4><a href="#">cart (2 items)</a></h4>
+                    <ul>
+                        <li><a href="#">home /</a></li>
+                        <li><a href="#">products</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-9 white-bg">
+                <!-- Single Product -->
+                <div class="single-product cold-md-12">
+                    <div class="flexslider col-md-6">
+                        <ul class="slides">
+                            <li data-thumb="{% static 'images/product-slide2.jpg' %}">
+                                <img src="{% static 'images/product-slide2.jpg' %}" alt=""/>
+                            </li>
+                            <li data-thumb="{% static 'images/product-slide1.jpg' %}">
+                                <img src="{% static 'images/product-slide1.jpg' %}" alt=""/>
+                            </li>
+                            <li data-thumb="{% static 'images/product-slide3.jpg' %}">
+                                <img src="{% static 'images/product-slide3.jpg' %}" alt=""/>
+                            </li>
+                            <li data-thumb="{% static 'images/product-slide4.jpg' %}">
+                                <img src="{% static 'images/product-slide4.jpg' %}" alt=""/>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="product-details col-md-6">
+                        <h1>{{ product.title }}</h1>
+                        <p class="price">
+                            ${{ product.price }}
+                        </p>
+                        <p>
+                            {{ product.description|linebreaks }}
+                        </p>
+                        <form action="#">
+                            <div class="qtyminus">
+                            </div>
+                            <div class="quantity buttons_added">
+                                <input type="number" step="1"
+                                       min="1"
+                                       max="30" name="quantity"
+                                       value="1"
+                                       title="Qty"
+                                       class="input-text qty text"
+                                       size="4" pattern=""
+                                       inputmode="">
+                            </div>
+                            <div class="qtyplus">
+                            </div>
+                        </form>
+                        <a href="#">Add to Cart</a>
+                        <hr>
+                        <div class="availability">
+                            <p>
+                                Availability: {{ product.active }}
+                            </p>
 
+                        </div>
+                        <div class="reviews">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End Single Product -->
+                </div>
+                <div class="col-md-12 tabs">
+                    <div class="bs-example">
+                        <div class="tabbable">
+                            <ul class="nav nav-tabs">
+                                <li><a data-toggle="tab" href="#tab1" data-loading-text="Loading...">Section 1</a></li>
+                                <li><a data-toggle="tab" href="#tab2" data-loading-text="Loading...">Section 2</a></li>
+                                <li><a data-toggle="tab" href="#tab3" data-loading-text="Loading...">Section 3</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="tab1" class="tab-pane active fade in">
+                                    <p>
+                                        Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american
+                                        apparel, butcher voluptate nisi qui. Raw denim you probably haven't heard of
+                                        them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
+                                        cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.
+                                        Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh
+                                        mi.
+                                    </p>
+                                </div>
+                                <div id="tab2" class="tab-pane fade">
+                                    <p>
+                                        Vestibulum nec erat eu nulla rhoncus fringilla ut non neque. Vivamus nibh urna,
+                                        ornare id gravida ut, mollis a magna. Aliquam porttitor condimentum nisi, eu
+                                        viverra ipsum porta ut. Nam hendrerit bibendum turpis, sed molestie mi fermentum
+                                        id. Aenean volutpat velit sem. Sed consequat ante in rutrum convallis. Nunc
+                                        facilisis leo at faucibus adipiscing. Duis auctor dictum erat hendrerit dapibus.
+                                    </p>
+                                </div>
+                                <div id="tab3" class="tab-pane fade">
+                                    <p>
+                                        WInteger convallis, nulla in sollicitudin placerat, ligula enim auctor lectus,
+                                        in mollis diam dolor at lorem. Sed bibendum nibh sit amet dictum feugiat.
+                                        Vivamus arcu sem, cursus a feugiat ut, iaculis at erat. Donec vehicula at ligula
+                                        vitae venenatis. Sed nunc nulla, vehicula non porttitor in, pharetra et dolor.
+                                        Fusce nec velit velit. Pellentesque consectetur eros nec interdum varius.
+                                        Quisque at mi dolor.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--articles-->
+            </div>
+            <div class="col-md-3 shop-sidebar">
+                <div class="sidebar-widgets">
+                    <div class="shop-widget">
+                        <h4>Categories</h4>
+                        <ul class="category-shop-list">
+                            <li>
+                                <a class="accordion-link" href="#">Watches <span>(4)</span></a>
+                                <ul class="accordion-list-content">
+                                    <li><a href="#">Jackets <span>(7)</span></a></li>
+                                    <li><a href="#">Electronics <span>(10)</span></a></li>
+                                    <li><a href="#">Sports <span>(12)</span></a></li>
+                                    <li><a href="#">Garden <span>(2)</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="accordion-link" href="#">Jewellery <span>(8)</span></a>
+                                <ul class="accordion-list-content">
+                                    <li><a href="#">Jackets <span>(7)</span></a></li>
+                                    <li><a href="#">Electronics <span>(10)</span></a></li>
+                                    <li><a href="#">Sports <span>(12)</span></a></li>
+                                    <li><a href="#">Garden <span>(2)</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="accordion-link" href="#">Technology <span>(6)</span></a>
+                                <ul class="accordion-list-content">
+                                    <li><a href="#">Jackets <span>(7)</span></a></li>
+                                    <li><a href="#">Electronics <span>(10)</span></a></li>
+                                    <li><a href="#">Sports <span>(12)</span></a></li>
+                                    <li><a href="#">Garden <span>(2)</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="accordion-link" href="#">Kids <span>(5)</span></a>
+                                <ul class="accordion-list-content">
+                                    <li><a href="#">Jackets <span>(7)</span></a></li>
+                                    <li><a href="#">Electronics <span>(10)</span></a></li>
+                                    <li><a href="#">Sports <span>(12)</span></a></li>
+                                    <li><a href="#">Garden <span>(2)</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="accordion-link" href="#">Electronics <span>(4)</span></a>
+                                <ul class="accordion-list-content">
+                                    <li><a href="#">Jackets <span>(7)</span></a></li>
+                                    <li><a href="#">Electronics <span>(10)</span></a></li>
+                                    <li><a href="#">Sports <span>(12)</span></a></li>
+                                    <li><a href="#">Garden <span>(2)</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="accordion-link" href="#">Sports <span>(5)</span></a>
+                                <ul class="accordion-list-content">
+                                    <li><a href="#">Jackets <span>(7)</span></a></li>
+                                    <li><a href="#">Electronics <span>(10)</span></a></li>
+                                    <li><a href="#">Sports <span>(12)</span></a></li>
+                                    <li><a href="#">Garden <span>(2)</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="accordion-link" href="#">Bicycles <span>(7)</span></a>
+                                <ul class="accordion-list-content">
+                                    <li><a href="#">Jackets <span>(7)</span></a></li>
+                                    <li><a href="#">Electronics <span>(10)</span></a></li>
+                                    <li><a href="#">Sports <span>(12)</span></a></li>
+                                    <li><a href="#">Garden <span>(2)</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="shop-widget">
+                        <h4>Popular Products</h4>
+                        <ul class="popular-product">
+                            <li>
+                                <img alt="" src="images/product.png">
+                                <div>
+                                    <h6><a href="#">Iphone 5 black</a></h6>
+                                    <span>$766.00</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img alt="" src="images/product2.png">
+                                <div>
+                                    <h6><a href="#">Samasung Galaxy note 3</a></h6>
+                                    <span>$555.00</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img alt="" src="images/product3.png">
+                                <div>
+                                    <h6><a href="#">Iphone 5 black</a></h6>
+                                    <span>$766.00</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img alt="" src="images/product4.png">
+                                <div>
+                                    <h6><a href="#">Samasung Galaxy note 3</a></h6>
+                                    <span>$555.00</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

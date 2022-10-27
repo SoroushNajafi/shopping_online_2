@@ -1,21 +1,191 @@
+{% load static %}
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>{% block page_title %}{% endblock %}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" media="screen">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" media="screen">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" type="text/css" media="screen"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/product-slider.css' %}" type="text/css" media="screen"/>
+
+
 </head>
 <body>
-{% if user.is_authenticated %}
-    <p>Hello {{ user.email }} | <a href="{% url 'account_logout' %}">Logout</a></p>
-    {% else %}
-    <a href="{% url 'account_login' %}">Login</a> | <a href="{% url 'account_signup' %}">Signup</a>
-{% endif %}
+<!--top-strip-->
+<div class="top-strip">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 user">
+                <p>
+                    Welcome to Delicio
+                </p>
+            </div>
+            <div class="col-md-6 language">
+                <ul>
+                    <li><a href="#">Eng</a></li>
+                    <li><a href="#">Usd</a></li>
+                    <li><a href="#">My Account</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end-top-strip-->
+<!--navbar-->
+<div class="container header">
+    <nav id="myNavbar" class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'product_list' %}">Shop</a></li>
+{#                    <li><a href="single.html">Single</a></li>#}
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Categories</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Lorem</a></li>
+                            <li><a href="#">Ipsum</a></li>
+                            <li><a href="#">Dolor sit amet</a></li>
+                            <li><a href="#">Dropdown</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="cart.html">Cart</a></li>
+{#                    <li><a href="checkout.html">Checkout</a></li>#}
+
+                    <li><a href="{% url 'aboutus' %}">About us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+</div>
+<!--end-navbar-->
+
+
 {% block content %}{% endblock %}
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
+<!--footer-->
+<div class="full-footer">
+    <div class="container-full">
+        <div class="container info">
+            <div class="row">
+                <div class="col-md-4 addres">
+                    <img src="{% static 'images/footer-logo.png' %}" alt="">
+                    <h6>Delicio Webshop,LLC</h6>
+                    <p>
+                         South Washington Street 828,Washington,USA
+                    </p>
+                    <p>
+                         Phone 0123 456 789/0123 456 788
+                    </p>
+                </div>
+                <div class="col-md-2 account">
+                    <h4>my Account</h4>
+                    <ul>
+                        <li><a href="#">cart</a></li>
+                        <li><a href="#">checkout</a></li>
+                        <li><a href="#">my accout</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 assistance">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="#">costumer assistance</a></li>
+                        <li><a href="#">delivery informations</a></li>
+                        <li><a href="#">international shipping</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 about">
+                    <h4>about us</h4>
+                    <p>
+                         Lorem ipsum dolor sit amet,consectetur adipiscing elit. in non vestibulum massa,sit amet bibendum eros. in accumsan dignissin.lorem ipsum dolor sit amet vestibulum massa,sit amet bibendum eros. in accumsan dignissin.lorem ipsum dolor sit amet
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end-addres-->
+    <div class="container">
+        <div class="row bottom-strip">
+            <div class="col-md-6 rights">
+                <p>
+                     Delicio Webshop-Responsive themeforest theme 2014
+                </p>
+            </div>
+            <div class="col-md-6 social">
+                <ul>
+                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-asterisk"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end-footer-->
+
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+<script src="{% static 'js/modernizr.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.nouislider.min.js' %}"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{% static 'js/libs/jquery-1.7.min.js' %}">\x3C/script>')</script>
+<script defer src="{% static 'js/jquery.flexslider.js' %}"></script>
+<script type="text/javascript">
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        controlNav: "thumbnails",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+  </script>
+<script type="text/javascript">
+// jQuery
+(function($) {
+  "use strict";
+    $(document).ready(function() {
+        // Main Slider
+        $('.main-flexslider').flexslider({
+            directionNav: true,
+            controlNav: false,
+            animation: "fade",
+            slideshowSpeed: 7000,
+            prevText: "",
+            nextText: "",
+        });
+    });
+})(jQuery);
+</script>
+
 </body>
 </html>
