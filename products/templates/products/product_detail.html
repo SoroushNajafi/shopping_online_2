@@ -1,6 +1,7 @@
 {% extends '_base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
+{% load comment_tags %}
 
 {% block page_title %}Product detail{% endblock %}
 
@@ -107,7 +108,7 @@
                                                     </div>
                                                     <hr>
                                                     <div class="mt-2">
-                                                        {% for comment in product.comments.all %}
+                                                        {% for comment in product.comments.all|only_active_comments %}
                                                             <div class="d-flex flex-row p-3">
                                                                 <img
                                                                         src="{% static 'images/member1.jpg' %}"
