@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+from django.contrib.messages import constants
 import os.path
 from pathlib import Path
 from environs import Env
@@ -134,8 +135,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-# LANGUAGE_CODE = 'en-us'
-LANGUAGE_CODE = 'fa'
+LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'fa'
 
 LANGUAGES = (
     ('en', 'English'),
@@ -177,3 +178,9 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 #crispy forms config
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+#for messages framework
+
+MESSAGE_TAGS = {
+    constants.ERROR: 'danger',
+}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-30 11:47+0330\n"
+"POT-Creation-Date: 2022-10-30 12:50+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -95,6 +95,10 @@ msgstr "محصولات"
 #: .\templates\products\product_list.html:15
 msgid "Cart"
 msgstr "سبد خرید"
+
+#: .\views.py:38
+msgid "Your comment successfully submitted"
+msgstr "نظر شما با موفقیت ثبت شد"
 
 #~ msgid "Availability"
 #~ msgstr "موجود"
