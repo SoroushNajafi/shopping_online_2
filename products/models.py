@@ -1,6 +1,7 @@
 from django.db import models
 from django.shortcuts import reverse
 from django.contrib.auth import get_user_model
+from django.utils.translation import gettext_lazy as _
 
 
 class Product(models.Model):
@@ -27,18 +28,23 @@ class ActiveCommentsManager(models.Manager):
 class Comment(models.Model):
 
     PRODUCT_STARS = [
-        ('1', 'Very Poor'),
-        ('2', 'Poor'),
-        ('3', 'Normal'),
-        ('4', 'Good'),
-        ('5', 'Perfect')
+        ('1', _('Very Poor')),
+        ('2', _('Poor')),
+        ('3', _('Normal')),
+        ('4', _('Good')),
+        ('5', _('Perfect')),
     ]
 
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
-    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='comments')
-    body = models.TextField(verbose_name='comment')
-    stars = models.CharField(verbose_name='rate', max_length=10, choices=PRODUCT_STARS)
-    active = models.BooleanField(default=True)
+    author = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE,
+        related_name='comments',
+        verbose_name=_('comment author'),
+    )
+    body = models.TextField(verbose_name=_('comment text'))
+    stars = models.CharField(verbose_name=_('your score to this product'), max_length=10, choices=PRODUCT_STARS)
+    active = models.BooleanField(verbose_name=_('active'), default=True)
 
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)

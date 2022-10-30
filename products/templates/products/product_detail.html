@@ -1,23 +1,17 @@
 {% extends '_base.html' %}
 {% load static %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 {% load comment_tags %}
 
-{% block page_title %}Product detail{% endblock %}
+{% block page_title %}{% trans 'Product Detail' %}{% endblock %}
 
 {% block content %}
     <div class="page-title">
         <div class="container">
             <div class="row">
-                <div class="col-md-10 produti">
-                    <h4>products</h4>
-                </div>
                 <div class="col-md-2 cart">
-                    <h4><a href="#">cart (2 items)</a></h4>
-                    <ul>
-                        <li><a href="#">home /</a></li>
-                        <li><a href="#">products</a></li>
-                    </ul>
+                    <h4>{% trans 'Product Detail' %}</h4>
                 </div>
             </div>
         </div>
@@ -46,7 +40,7 @@
                     <div class="product-details col-md-6">
                         <h1>{{ product.title }}</h1>
                         <p class="price">
-                            ${{ product.price }}
+                            {% translate '$' %}{{ product.price }}
                         </p>
                         <p>
                             {{ product.description|linebreaks }}
@@ -67,16 +61,15 @@
                             <div class="qtyplus">
                             </div>
                         </form>
-                        <a href="#">Add to Cart</a>
+                        <a href="#">{% trans 'Add to Cart' %}</a>
                         <hr>
                         <div class="availability">
-                            <p>
-                                Availability: {{ product.active }}
-                            </p>
 
                         </div>
                         <div class="reviews">
                             <ul>
+                                <b>{% translate 'Score' %} </b>
+                                <br><br>
                                 <li><a href="#"><i class="fa fa-star"></i></a></li>
                                 <li><a href="#"><i class="fa fa-star"></i></a></li>
                                 <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -90,7 +83,7 @@
                 <div class="col-md-12 tabs">
                     <div class="bs-example">
                         <div class="tabbable">
-                            <div class="shop-widget"><h4>Drop your comments</h4></div>
+                            <div class="shop-widget"><h4>{% trans 'Drop your comment' %}</h4></div>
                             <div class="tab-content">
                                 <div id="tab1" class="tab-pane active fade in">
                                     <div class="container mt-5 mb-5">
@@ -103,7 +96,7 @@
                                                         <form action="{% url 'comment_create' product.id %}" method="post">
                                                             {% csrf_token %}
                                                             {{ comment_form|crispy }}
-                                                            <button class="btn btn-success" type="submit">Post</button>
+                                                            <button class="btn btn-success" type="submit">{% trans 'Post' %}</button>
                                                         </form>
                                                     </div>
                                                     <hr>
@@ -156,7 +149,7 @@
             <div class="col-md-3 shop-sidebar">
                 <div class="sidebar-widgets">
                     <div class="shop-widget">
-                        <h4>Categories</h4>
+                        <h4>{% trans 'Categories' %}</h4>
                         <ul class="category-shop-list">
                             <li>
                                 <a class="accordion-link" href="#">Watches <span>(4)</span></a>
@@ -224,7 +217,7 @@
                         </ul>
                     </div>
                     <div class="shop-widget">
-                        <h4>Popular Products</h4>
+                        <h4>{% trans 'Related Products' %}</h4>
                         <ul class="popular-product">
                             <li>
                                 <img alt="" src="images/product.png">

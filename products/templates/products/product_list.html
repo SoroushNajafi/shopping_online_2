@@ -1,5 +1,6 @@
 {% extends '_base.html' %}
 {% load static %}
+{% load i18n %}
 {% block page_title %}Product list{% endblock %}
 
 {% block content %}
@@ -8,14 +9,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 produti">
-                <h4>products</h4>
+                <h4 style="margin-bottom: 34px">{% trans 'Products' %}</h4>
             </div>
             <div class="col-md-2 cart">
-                <h4><a href="#">cart (2 items)</a></h4>
-                <ul>
-                    <li><a href="#">home /</a></li>
-                    <li><a href="#">products</a></li>
-                </ul>
+                <h4 style="margin-top: 26px"><a href="#">{% translate 'Cart' %} (2 items)</a></h4>
             </div>
         </div>
     </div>
@@ -45,7 +42,7 @@
                         <a href="{{ product.get_absolute_url }}"><span>
                         {{ product.title }} </span></a>
                         <p>
-                             $ {{ product.price }}
+                             {% translate '$' %} {{ product.price }}
                         </p>
                     </div>
                 </div>
@@ -66,7 +63,7 @@
                     </div>
                 </div>
                 <div class="shop-widget">
-                    <h4>Categories</h4>
+                    <h4>{% translate 'Categories' %}</h4>
                     <ul class="category-shop-list">
                         <li>
                         <a class="accordion-link" href="#">Watches <span>(4)</span></a>
