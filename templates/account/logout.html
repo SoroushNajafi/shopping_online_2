@@ -3,13 +3,16 @@
 {% block page_title %}Logout Page{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <h3>Logout</h3>
-        <h4>Are you sure you want to log out?</h4>
+    <br>
+    <div class="container" style="color: white">
+        <h1>Logout</h1>
+        <hr>
+        <h4>Are you sure you want to log out?</h4><br>
         <form action="" method="post">
             {% csrf_token %}
-            <button class="btn btn-dark" type="submit">Yes Logout</button>
+            <button class="btn btn-dark" type="submit" style="color: black">Yes Logout</button>
         </form>
     </div>
+    <br><br><br><br><br><br>
 
 {% endblock %}

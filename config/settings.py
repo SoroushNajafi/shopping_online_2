@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'accounts',
     'pages',
     'products',
+    'cart.apps.CartConfig',
 ]
 
 SITE_ID = 1
