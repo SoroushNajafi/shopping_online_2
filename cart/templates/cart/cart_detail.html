@@ -1,0 +1,123 @@
+{% extends '_base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block page_title %}Cart detail{% endblock %}
+
+{% block content %}
+    <div class="container checking-area">
+        <div class="row">
+            <div class="col-md-9 cart-area">
+                <div class="sixteen columns cart-section oflow">
+                    <!-- Cart -->
+                    <table class="table cart-table responsive-table">
+                        {% if cart %}
+                            <tr>
+                                <th>
+                                    Item
+                                </th>
+                                <th>
+                                    Description
+                                </th>
+                                <th>
+                                    Price
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>
+                                    Total
+                                </th>
+                                <th>
+                                </th>
+                            </tr>
+                        {% else %}
+                            <p>{% trans 'Cart is empty!' %}<a href="{% url 'product_list' %}">
+                               {% trans 'Go Shopping' %}
+                            </a></p>
+                        {% endif %}
+                        {% for item in cart %}
+                            <tr>
+                                <td>
+                                    <img src="{% static 'images/product1-small.jpg' %}" alt=""/>
+                                </td>
+                                <td class="cart-title">
+                                    <a href="{{ item.product_obj.get_absolute_url }}">{{ item.product_obj.title }}</a>
+                                </td>
+                                <td>
+                                    {% translate '$' %}{{ item.product_obj.price }}
+                                </td>
+                                <td>
+                                    <form action='{% url 'cart:add_to_cart' item.product_obj.id %}' method="post">
+                                        {% csrf_token %}
+                                        <div class="quantity buttons_added">
+                                            <input type="number" step="1"
+                                                   min="1"
+                                                   max="30" name="quantity"
+                                                   value="{{ item.quantity }}"
+                                                   title="Qty"
+                                                   class="input-text qty text"
+                                                   size="4" pattern=""
+                                                   inputmode="">
+                                            {{ item.product_update_quantity_form.inplace }}
+                                            <button type="submit" class="btn"
+                                                    style="background-color: #6d534c; color: white">{% translate 'Update' %}</button>
+                                        </div>
+                                    </form>
+                                </td>
+                                <td class="cart-total">
+                                    {% translate '$' %}{{ item.total_price }}
+                                </td>
+                                <td>
+                                    <a href="{% url 'cart:remove_from_cart' item.product_obj.id %}"><p>&#10008;</p></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                    <a style="text-decoration: none" href="{% url 'product_list' %}">
+                        <button class="btn" ,
+                                style="background-color: #6d534c; color: white">{% translate 'Back to Shoplist' %}</button>
+                    </a>
+                </div>
+                <div class="taxat">
+                    <form action="#" method="get" class="apply-coupon">
+                        <input class="search-field" type="text" placeholder="Coupon Code" value="">
+                        <a href="#" class="coupon-btn checkout-btn">Apply Coupon</a>
+                    </form>
+                    <div class="col-md-6 eight columns cart-totals">
+                        <table class="table cart-table test">
+                            <tbody>
+                            <tr>
+                                <th>
+                                    Cart Subtotal
+                                </th>
+                                <td>
+                                    <strong>{% trans '$' %}{{ cart.get_total_price }}</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Shipping and Handling
+                                </th>
+                                <td>
+                                    Free Shipping
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Order Total
+                                </th>
+                                <td>
+                                    <strong>{% trans '$' %}{{ cart.get_total_price }}</strong>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <a href="#" class="calculate-shipping">Checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
