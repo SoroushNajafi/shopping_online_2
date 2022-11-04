@@ -23,18 +23,23 @@
                 <div class="single-product cold-md-12">
                     <div class="flexslider col-md-6">
                         <ul class="slides">
-                            <li data-thumb="{% static 'images/product-slide2.jpg' %}">
-                                <img src="{% static 'images/product-slide2.jpg' %}" alt=""/>
+                            {% if product.image %}
+                             <li data-thumb="{{ product.image.url }}">
+                                <img src="{{ product.image.url }}" alt=""/>
                             </li>
-                            <li data-thumb="{% static 'images/product-slide1.jpg' %}">
-                                <img src="{% static 'images/product-slide1.jpg' %}" alt=""/>
-                            </li>
-                            <li data-thumb="{% static 'images/product-slide3.jpg' %}">
-                                <img src="{% static 'images/product-slide3.jpg' %}" alt=""/>
-                            </li>
-                            <li data-thumb="{% static 'images/product-slide4.jpg' %}">
-                                <img src="{% static 'images/product-slide4.jpg' %}" alt=""/>
-                            </li>
+                            {% endif %}
+{#                            <li data-thumb="{% static 'images/product-slide2.jpg' %}">#}
+{#                                <img src="{% static 'images/product-slide2.jpg' %}" alt=""/>#}
+{#                            </li>#}
+{#                            <li data-thumb="{% static 'images/product-slide1.jpg' %}">#}
+{#                                <img src="{% static 'images/product-slide1.jpg' %}" alt=""/>#}
+{#                            </li>#}
+{#                            <li data-thumb="{% static 'images/product-slide3.jpg' %}">#}
+{#                                <img src="{% static 'images/product-slide3.jpg' %}" alt=""/>#}
+{#                            </li>#}
+{#                            <li data-thumb="{% static 'images/product-slide4.jpg' %}">#}
+{#                                <img src="{% static 'images/product-slide4.jpg' %}" alt=""/>#}
+{#                            </li>#}
                         </ul>
                     </div>
                     <div class="product-details col-md-6">

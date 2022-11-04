@@ -38,9 +38,11 @@
                         {% endif %}
                         {% for item in cart %}
                             <tr>
+                                {% if item.product_obj.image %}
                                 <td>
-                                    <img src="{% static 'images/product1-small.jpg' %}" alt=""/>
+                                    <img style="width: 140px; height: 90px" src="{{ item.product_obj.image.url }}" alt=""/>
                                 </td>
+                                {% endif %}
                                 <td class="cart-title">
                                     <a href="{{ item.product_obj.get_absolute_url }}">{{ item.product_obj.title }}</a>
                                 </td>
