@@ -90,15 +90,21 @@
                                                 <div class="card">
                                                     <div class="p-3">
                                                     </div>
-                                                    <div class="mt-3 d-flex flex-row align-items-center p-3 form-color">
-                                                        <form action="{% url 'comment_create' product.id %}"
-                                                              method="post">
-                                                            {% csrf_token %}
-                                                            {{ comment_form|crispy }}
-                                                            <button class="btn btn-success"
-                                                                    type="submit">{% trans 'Post' %}</button>
-                                                        </form>
-                                                    </div>
+                                                    {% if user.is_authenticated %}
+                                                        <div class="mt-3 d-flex flex-row align-items-center p-3 form-color">
+                                                            <form action="{% url 'comment_create' product.id %}"
+                                                                  method="post">
+                                                                {% csrf_token %}
+                                                                {{ comment_form|crispy }}
+                                                                <button class="btn btn-success"
+                                                                        type="submit">{% trans 'Post' %}</button>
+                                                            </form>
+                                                        </div>
+                                                    {% else %}
+                                                        <h3>{% trans 'You need to be logged in to drop comments, you can do so by clicking on ' %}<a
+                                                                href="{% url 'account_login' %}" style="color:#ff0208;">{% trans 'Login' %}</a></h3>
+
+                                                    {% endif %}
                                                     <hr>
                                                     <div class="mt-2">
                                                         {% for comment in product.comments.all|only_active_comments %}

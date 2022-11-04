@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-30 12:50+0330\n"
+"POT-Creation-Date: 2022-11-04 10:51+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,19 +59,19 @@ msgid "Product Detail"
 msgstr "جزییات محصول"
 
 #: .\templates\products\product_detail.html:43
-#: .\templates\products\product_list.html:45
+#: .\templates\products\product_list.html:41
 msgid "$"
 msgstr "تومان"
 
-#: .\templates\products\product_detail.html:64
+#: .\templates\products\product_detail.html:61
 msgid "Add to Cart"
 msgstr "اضافه به سبد خرید"
 
-#: .\templates\products\product_detail.html:71
+#: .\templates\products\product_detail.html:69
 msgid "Score"
 msgstr "امتیاز"
 
-#: .\templates\products\product_detail.html:86
+#: .\templates\products\product_detail.html:84
 msgid "Drop your comment"
 msgstr "نظر خود را بنویسید"
 
@@ -80,7 +80,7 @@ msgid "Post"
 msgstr "ارسال"
 
 #: .\templates\products\product_detail.html:152
-#: .\templates\products\product_list.html:66
+#: .\templates\products\product_list.html:62
 msgid "Categories"
 msgstr "دسته بندی"
 
@@ -92,13 +92,12 @@ msgstr "محصولات مرتبط"
 msgid "Products"
 msgstr "محصولات"
 
-#: .\templates\products\product_list.html:15
-msgid "Cart"
-msgstr "سبد خرید"
-
 #: .\views.py:38
 msgid "Your comment successfully submitted"
 msgstr "نظر شما با موفقیت ثبت شد"
+
+#~ msgid "Cart"
+#~ msgstr "سبد خرید"
 
 #~ msgid "Availability"
 #~ msgstr "موجود"
