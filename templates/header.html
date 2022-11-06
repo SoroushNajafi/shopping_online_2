@@ -52,10 +52,9 @@
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Categories</a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Lorem</a></li>
-                            <li><a href="#">Ipsum</a></li>
-                            <li><a href="#">Dolor sit amet</a></li>
-                            <li><a href="#">Dropdown</a></li>
+                            {% for category in categories %}
+                            <li><a href="{{ category.get_absolute_url }}">{{ category }}</a></li>
+                            {% endfor %}
                         </ul>
                     </li>
                     <li><a href="{% url 'cart:cart_detail' %}">Cart</a></li>

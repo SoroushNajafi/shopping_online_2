@@ -4,7 +4,24 @@ from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 
 
+class Category(models.Model):
+    CATEGORY_CHOICES = (
+        ('White Chocolate', 'White Chocolate'),
+        ('Dark Chocolate', 'Dark Chocolate'),
+        ('Nuts Chocolate', 'Nuts Chocolate'),
+    )
+    category = models.CharField(choices=CATEGORY_CHOICES, max_length=30, null=True)
+    cover = models.ImageField(upload_to='category/category_cover', blank=True)
+
+    def __str__(self):
+        return self.category
+
+    def get_absolute_url(self):
+        return reverse('products_by_category', args=[self.id])
+
+
 class Product(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products', null=True)
     title = models.CharField(max_length=200)
     description = models.TextField()
     price = models.DecimalField(decimal_places=2, max_digits=5)

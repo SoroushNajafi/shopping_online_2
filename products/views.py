@@ -4,8 +4,26 @@ from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
 
-from .models import Product, Comment
+from .models import Product, Comment, Category
 from .froms import CommentForm
+
+
+class CategoryListView(generic.ListView):
+    model = Category
+    template_name = 'products/by_categories.html'
+    context_object_name = 'categories'
+
+
+class ProductsByCategoryListView(generic.ListView):
+    template_name = 'products/products_by_category.html'
+    paginate_by = 6
+
+    def get_queryset(self):
+        category_id = int(self.kwargs['category_id'])
+        category = get_object_or_404(Category, id=category_id)
+        return category.products.all()
+
+    context_object_name = 'products'
 
 
 class ProductListView(generic.ListView):
