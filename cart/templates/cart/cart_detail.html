@@ -1,6 +1,8 @@
 {% extends '_base.html' %}
 {% load i18n %}
 {% load static %}
+{% load humanize %}
+{% load persian_translation_tags %}
 
 {% block page_title %}Cart detail{% endblock %}
 
@@ -47,7 +49,7 @@
                                     <a href="{{ item.product_obj.get_absolute_url }}">{{ item.product_obj.title }}</a>
                                 </td>
                                 <td>
-                                    {% translate '$' %}{{ item.product_obj.price }}
+                                    {% translate '$' %}{{ item.product_obj.price|intcomma|translate_number }}
                                 </td>
                                 <td>
                                     <form action='{% url 'cart:add_to_cart' item.product_obj.id %}' method="post">
@@ -68,7 +70,7 @@
                                     </form>
                                 </td>
                                 <td class="cart-total">
-                                    {% translate '$' %}{{ item.total_price }}
+                                    {% translate '$' %}{{ item.total_price|intcomma|translate_number }}
                                 </td>
                                 <td>
                                     <a href="{% url 'cart:remove_from_cart' item.product_obj.id %}"><p>&#10008;</p></a>
@@ -94,7 +96,7 @@
                                     Cart Subtotal
                                 </th>
                                 <td>
-                                    <strong>{% trans '$' %}{{ cart.get_total_price }}</strong>
+                                    <strong>{% trans '$' %}{{ cart.get_total_price|intcomma|translate_number }}</strong>
                                 </td>
                             </tr>
                             <tr>
@@ -105,12 +107,12 @@
                                     Free Shipping
                                 </td>
                             </tr>
-                            <tr>
+                            <tr
                                 <th>
                                     Order Total
                                 </th>
                                 <td>
-                                    <strong>{% trans '$' %}{{ cart.get_total_price }}</strong>
+                                    <strong>{% trans '$' %}{{ cart.get_total_price|intcomma|translate_number }}</strong>
                                 </td>
                             </tr>
                             </tbody>

@@ -3,6 +3,9 @@
 {% load i18n %}
 {% load crispy_forms_tags %}
 {% load comment_tags %}
+{% load jalali_tags %}
+{% load persian_translation_tags %}
+{% load humanize %}
 
 {% block page_title %}{% trans 'Product Detail' %}{% endblock %}
 
@@ -45,7 +48,7 @@
                     <div class="product-details col-md-6">
                         <h1>{{ product.title }}</h1>
                         <p class="price">
-                            {% translate '$' %}{{ product.price }}
+                            {% translate '$' %}{{ product.price|intcomma|translate_number }}
                         </p>
                         <p>
                             {{ product.description|linebreaks }}
@@ -124,7 +127,7 @@
                                                                     <div class="d-flex justify-content-between align-items-center">
                                                                         <div class="d-flex flex-row align-items-center">
                                                                             <h6>{{ comment.author|capfirst }} | <span
-                                                                                    style="color: darkred"> {{ comment.datetime_created }}</span>
+                                                                                    style="color: darkred"> {{ comment.datetime_created|to_jalali:'%Y %B %d _ %H:%M:%S'|translate_number }}</span>
                                                                             </h6>
                                                                         </div>
 
