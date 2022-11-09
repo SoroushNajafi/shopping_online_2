@@ -42,7 +42,7 @@
                             <tr>
                                 {% if item.product_obj.image %}
                                 <td>
-                                    <img style="width: 140px; height: 90px" src="{{ item.product_obj.image.url }}" alt=""/>
+                                    <a href="{{ item.product_obj.get_absolute_url }}"><img style="width: 140px; height: 90px" src="{{ item.product_obj.image.url }}" alt=""/></a>
                                 </td>
                                 {% endif %}
                                 <td class="cart-title">

@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'crispy_forms',
+    'ckeditor',
     #local apps
     'accounts',
     'pages',
@@ -149,8 +150,8 @@ LANGUAGES = (
     ('fa', 'Persian'),
 )
 
-# TIME_ZONE = 'UTC'
-TIME_ZONE = 'Asia/Tehran'
+TIME_ZONE = 'UTC'
+# TIME_ZONE = 'Asia/Tehran'
 
 USE_I18N = True
 USE_L10N = True
@@ -162,6 +163,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 
 #media config
 MEDIA_URL = 'media/'

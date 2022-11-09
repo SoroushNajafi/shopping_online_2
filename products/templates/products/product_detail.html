@@ -27,22 +27,22 @@
                     <div class="flexslider col-md-6">
                         <ul class="slides">
                             {% if product.image %}
-                             <li data-thumb="{{ product.image.url }}">
-                                <img src="{{ product.image.url }}" alt=""/>
-                            </li>
+                                <li data-thumb="{{ product.image.url }}">
+                                    <img src="{{ product.image.url }}" alt=""/>
+                                </li>
                             {% endif %}
-{#                            <li data-thumb="{% static 'images/product-slide2.jpg' %}">#}
-{#                                <img src="{% static 'images/product-slide2.jpg' %}" alt=""/>#}
-{#                            </li>#}
-{#                            <li data-thumb="{% static 'images/product-slide1.jpg' %}">#}
-{#                                <img src="{% static 'images/product-slide1.jpg' %}" alt=""/>#}
-{#                            </li>#}
-{#                            <li data-thumb="{% static 'images/product-slide3.jpg' %}">#}
-{#                                <img src="{% static 'images/product-slide3.jpg' %}" alt=""/>#}
-{#                            </li>#}
-{#                            <li data-thumb="{% static 'images/product-slide4.jpg' %}">#}
-{#                                <img src="{% static 'images/product-slide4.jpg' %}" alt=""/>#}
-{#                            </li>#}
+                            {#                            <li data-thumb="{% static 'images/product-slide2.jpg' %}">#}
+                            {#                                <img src="{% static 'images/product-slide2.jpg' %}" alt=""/>#}
+                            {#                            </li>#}
+                            {#                            <li data-thumb="{% static 'images/product-slide1.jpg' %}">#}
+                            {#                                <img src="{% static 'images/product-slide1.jpg' %}" alt=""/>#}
+                            {#                            </li>#}
+                            {#                            <li data-thumb="{% static 'images/product-slide3.jpg' %}">#}
+                            {#                                <img src="{% static 'images/product-slide3.jpg' %}" alt=""/>#}
+                            {#                            </li>#}
+                            {#                            <li data-thumb="{% static 'images/product-slide4.jpg' %}">#}
+                            {#                                <img src="{% static 'images/product-slide4.jpg' %}" alt=""/>#}
+                            {#                            </li>#}
                         </ul>
                     </div>
                     <div class="product-details col-md-6">
@@ -51,7 +51,7 @@
                             {% translate '$' %}{{ product.price|intcomma|translate_number }}
                         </p>
                         <p>
-                            {{ product.description|linebreaks }}
+                            {{ product.description|safe }}
                         </p>
                         <form action="{% url 'cart:add_to_cart' product.id %}" method="post">
                             {% csrf_token %}
@@ -110,7 +110,8 @@
                                                         </div>
                                                     {% else %}
                                                         <h3>{% trans 'You need to be logged in to drop comments, you can do so by clicking on ' %}<a
-                                                                href="{% url 'account_login' %}" style="color:#ff0208;">{% trans 'Login' %}</a></h3>
+                                                                href="{% url 'account_login' %}"
+                                                                style="color:#ff0208;">{% trans 'Login' %}</a></h3>
 
                                                     {% endif %}
                                                     <hr>
@@ -143,6 +144,18 @@
                                                                                 class="ml-3"><i
                                                                                 class="fa fa-comments-o"
                                                                                 style="color: red"></i></span>
+                                                                        {% if comment.author == user %}
+                                                                            <button class="badge"
+                                                                                    style="background-color: #6d534c"><a
+                                                                                    style="color: white"
+                                                                                    href="{% url 'comment_update' comment.id %}">Edit</a>
+                                                                            </button>
+                                                                            <button class="badge"
+                                                                                    style="background-color: #6d534c"><a
+                                                                                    style="color: white"
+                                                                                    href="{% url 'comment_update' comment.id %}">Delete</a>
+                                                                            </button>
+                                                                        {% endif %}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -165,69 +178,24 @@
                     <div class="shop-widget">
                         <h4>{% trans 'Categories' %}</h4>
                         <ul class="category-shop-list">
-                            <li>
-                                <a class="accordion-link" href="#">Watches <span>(4)</span></a>
-                                <ul class="accordion-list-content">
-                                    <li><a href="#">Jackets <span>(7)</span></a></li>
-                                    <li><a href="#">Electronics <span>(10)</span></a></li>
-                                    <li><a href="#">Sports <span>(12)</span></a></li>
-                                    <li><a href="#">Garden <span>(2)</span></a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="accordion-link" href="#">Jewellery <span>(8)</span></a>
-                                <ul class="accordion-list-content">
-                                    <li><a href="#">Jackets <span>(7)</span></a></li>
-                                    <li><a href="#">Electronics <span>(10)</span></a></li>
-                                    <li><a href="#">Sports <span>(12)</span></a></li>
-                                    <li><a href="#">Garden <span>(2)</span></a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="accordion-link" href="#">Technology <span>(6)</span></a>
-                                <ul class="accordion-list-content">
-                                    <li><a href="#">Jackets <span>(7)</span></a></li>
-                                    <li><a href="#">Electronics <span>(10)</span></a></li>
-                                    <li><a href="#">Sports <span>(12)</span></a></li>
-                                    <li><a href="#">Garden <span>(2)</span></a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="accordion-link" href="#">Kids <span>(5)</span></a>
-                                <ul class="accordion-list-content">
-                                    <li><a href="#">Jackets <span>(7)</span></a></li>
-                                    <li><a href="#">Electronics <span>(10)</span></a></li>
-                                    <li><a href="#">Sports <span>(12)</span></a></li>
-                                    <li><a href="#">Garden <span>(2)</span></a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="accordion-link" href="#">Electronics <span>(4)</span></a>
-                                <ul class="accordion-list-content">
-                                    <li><a href="#">Jackets <span>(7)</span></a></li>
-                                    <li><a href="#">Electronics <span>(10)</span></a></li>
-                                    <li><a href="#">Sports <span>(12)</span></a></li>
-                                    <li><a href="#">Garden <span>(2)</span></a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="accordion-link" href="#">Sports <span>(5)</span></a>
-                                <ul class="accordion-list-content">
-                                    <li><a href="#">Jackets <span>(7)</span></a></li>
-                                    <li><a href="#">Electronics <span>(10)</span></a></li>
-                                    <li><a href="#">Sports <span>(12)</span></a></li>
-                                    <li><a href="#">Garden <span>(2)</span></a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="accordion-link" href="#">Bicycles <span>(7)</span></a>
-                                <ul class="accordion-list-content">
-                                    <li><a href="#">Jackets <span>(7)</span></a></li>
-                                    <li><a href="#">Electronics <span>(10)</span></a></li>
-                                    <li><a href="#">Sports <span>(12)</span></a></li>
-                                    <li><a href="#">Garden <span>(2)</span></a></li>
-                                </ul>
-                            </li>
+                            {% for category in categories %}
+
+                                <li>
+                                    <a class="accordion-link" href="#">{{ category }} <span>(4)</span></a>
+                                    <ul class="accordion-list-content">
+                                        {% for product in category.products.all %}
+
+                                            <li><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></li>
+                                            <hr>
+
+                                        {% endfor %}
+
+
+                                    </ul>
+                                </li>
+
+                            {% endfor %}
+
                         </ul>
                     </div>
                     <div class="shop-widget">
@@ -238,27 +206,6 @@
                                 <div>
                                     <h6><a href="#">Iphone 5 black</a></h6>
                                     <span>$766.00</span>
-                                </div>
-                            </li>
-                            <li>
-                                <img alt="" src="images/product2.png">
-                                <div>
-                                    <h6><a href="#">Samasung Galaxy note 3</a></h6>
-                                    <span>$555.00</span>
-                                </div>
-                            </li>
-                            <li>
-                                <img alt="" src="images/product3.png">
-                                <div>
-                                    <h6><a href="#">Iphone 5 black</a></h6>
-                                    <span>$766.00</span>
-                                </div>
-                            </li>
-                            <li>
-                                <img alt="" src="images/product4.png">
-                                <div>
-                                    <h6><a href="#">Samasung Galaxy note 3</a></h6>
-                                    <span>$555.00</span>
                                 </div>
                             </li>
                         </ul>
