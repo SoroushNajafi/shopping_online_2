@@ -16,6 +16,8 @@
             {{ form|crispy }}
             <button type="submit" class="btn" style="background-color: #6d534c;color: white">Edit</button>
         </form>
+        <br>
+        <a style="color:white;" href="{{ comment.get_absolute_url }}">Go Back</a>
     </div>
 
 {% endblock %}

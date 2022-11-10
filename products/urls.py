@@ -8,4 +8,5 @@ urlpatterns = [
     path('<int:pk>/', views.ProductDetailView.as_view(), name='product_detail'),
     path('comment/<int:product_id>/', views.CommentCreateView.as_view(), name='comment_create'),
     path('comment/update/<int:comment_id>/', views.CommentUpdateView.as_view(), name='comment_update'),
+    path('comment/delete/<int:comment_id>/', views.CommentDeleteView.as_view(), name='comment_delete'),
 ]
