@@ -4,7 +4,7 @@
 {% load humanize %}
 {% load persian_translation_tags %}
 
-{% block page_title %}Cart detail{% endblock %}
+{% block page_title %}{% trans 'Cart Detail' %}{% endblock %}
 
 {% block content %}
     <div class="container checking-area">
@@ -16,19 +16,19 @@
                         {% if cart %}
                             <tr>
                                 <th>
-                                    Item
+                                    {% trans 'Item' %}
                                 </th>
                                 <th>
-                                    Description
+                                    {% trans 'Description' %}
                                 </th>
                                 <th>
-                                    Price
+                                    {% trans 'Price' %}
                                 </th>
                                 <th>
-                                    Quantity
+                                    {% trans 'Quantity' %}
                                 </th>
                                 <th>
-                                    Total
+                                    {% trans 'Total' %}
                                 </th>
                                 <th>
                                 </th>
@@ -86,14 +86,14 @@
                 <div class="taxat">
                     <form action="#" method="get" class="apply-coupon">
                         <input class="search-field" type="text" placeholder="Coupon Code" value="">
-                        <a href="#" class="coupon-btn checkout-btn">Apply Coupon</a>
+                        <a href="#" class="coupon-btn checkout-btn">{% trans 'Apply Coupon' %}</a>
                     </form>
                     <div class="col-md-6 eight columns cart-totals">
                         <table class="table cart-table test">
                             <tbody>
                             <tr>
                                 <th>
-                                    Cart Subtotal
+                                    {% trans 'Cart Subtotal' %}
                                 </th>
                                 <td>
                                     <strong>{% trans '$' %}{{ cart.get_total_price|intcomma|translate_number }}</strong>
@@ -101,15 +101,15 @@
                             </tr>
                             <tr>
                                 <th>
-                                    Shipping and Handling
+                                    {% trans 'Shipping and Handling' %}
                                 </th>
                                 <td>
-                                    Free Shipping
+                                    {% trans 'Free Shipping' %}
                                 </td>
                             </tr>
-                            <tr
+                            <tr>
                                 <th>
-                                    Order Total
+                                    {% trans 'Order Total' %}
                                 </th>
                                 <td>
                                     <strong>{% trans '$' %}{{ cart.get_total_price|intcomma|translate_number }}</strong>
@@ -118,7 +118,7 @@
                             </tbody>
                         </table>
                         <br>
-                        <a href="#" class="calculate-shipping">Checkout</a>
+                        <a href="#" class="calculate-shipping">{% trans 'Checkout' %}</a>
                     </div>
                 </div>
             </div>

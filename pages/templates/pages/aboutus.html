@@ -1,9 +1,10 @@
 {% extends '_base.html' %}
+{% load i18n %}
 
-{% block page_title %}About Us Page{% endblock %}
+{% block page_title %}{% trans 'About Us Page' %}{% endblock %}
 
 {% block content %}
     <br>
-    <h3 style="color: whitesmoke">About Us Page</h3>
+    <h3 style="color: whitesmoke">{% trans 'About Us Page' %}</h3>
     <br><br><br><br><br><br><br><br><br><br><br><br><br>
 {% endblock %}

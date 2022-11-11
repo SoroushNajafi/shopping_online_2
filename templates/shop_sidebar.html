@@ -1,0 +1,66 @@
+{% load static %}
+{% load i18n %}
+
+<div class="col-md-3 shop-sidebar">
+            <div class="sidebar-widgets">
+{#                <div class="shop-widget">#}
+{#                    <h4>Price selector</h4>#}
+{#                    <div class="price-range">#}
+{#                        <!-- div to become a slider -->#}
+{#                        <div class="noUiSlider">#}
+{#                        </div>#}
+{#                        <input type="text" id="start-val"/>#}
+{#                        <input type="text" id="end-val"/>#}
+{#                    </div>#}
+{#                </div>#}
+                <div class="shop-widget">
+                    <h4>{% translate 'Categories' %}</h4>
+                    <ul class="category-shop-list">
+                        {% for category in categories %}
+                        <li>
+                        <a class="accordion-link" href="">{{ category }}<span>({{ category.products.count }})</span></a>
+                        <ul class="accordion-list-content">
+                            {% for product in category.products.all %}
+                            <li><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></li>
+                                <hr>
+                            {% endfor %}
+                        </ul>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+{#                <div class="shop-widget">#}
+{#                    <h4>Popular Products</h4>#}
+{#                    <ul class="popular-product">#}
+{#                        <li>#}
+{#                        <img alt="" src="images/product.png">#}
+{#                        <div>#}
+{#                            <h6><a href="#">Iphone 5 black</a></h6>#}
+{#                            <span>$766.00</span>#}
+{#                        </div>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                        <img alt="" src="images/product2.png">#}
+{#                        <div>#}
+{#                            <h6><a href="#">Samasung Galaxy note 3</a></h6>#}
+{#                            <span>$555.00</span>#}
+{#                        </div>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                        <img alt="" src="images/product3.png">#}
+{#                        <div>#}
+{#                            <h6><a href="#">Iphone 5 black</a></h6>#}
+{#                            <span>$766.00</span>#}
+{#                        </div>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                        <img alt="" src="images/product4.png">#}
+{#                        <div>#}
+{#                            <h6><a href="#">Samasung Galaxy note 3</a></h6>#}
+{#                            <span>$555.00</span>#}
+{#                        </div>#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                </div>#}
+            </div>
+        </div>

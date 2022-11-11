@@ -9,15 +9,15 @@
 {% block content %}
     <div class="container" style="color: white">
         <br>
-        <h1>Edit Comment</h1>
+        <h1>{% trans 'Edit Comment' %}</h1>
         <hr>
         <form action="" method="post">
             {% csrf_token %}
             {{ form|crispy }}
-            <button type="submit" class="btn" style="background-color: #6d534c;color: white">Edit</button>
+            <button type="submit" class="btn" style="background-color: #6d534c;color: white">{% trans 'Edit' %}</button>
         </form>
         <br>
-        <a style="color:white;" href="{{ comment.get_absolute_url }}">Go Back</a>
+        <a style="color:white;" href="{{ comment.get_absolute_url }}">{% trans 'Go Back' %}</a>
     </div>
 
 {% endblock %}

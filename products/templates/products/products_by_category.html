@@ -1,7 +1,7 @@
 {% extends '_base.html' %}
 {% load static %}
 {% load i18n %}
-{% block page_title %}Products by Category list{% endblock %}
+{% block page_title %}{% trans 'Products by Category list' %}{% endblock %}
 
 {% block content %}
 
@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 produti">
-                <h4 style="margin-bottom: 34px">{% trans 'Products by Category' %}</h4>
+                <h4 style="margin-bottom: 34px">{% trans 'Products by Category' %} | {{ category }}</h4>
             </div>
         </div>
     </div>

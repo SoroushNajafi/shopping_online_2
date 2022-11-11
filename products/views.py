@@ -24,6 +24,13 @@ class ProductsByCategoryListView(generic.ListView):
         category = get_object_or_404(Category, id=category_id)
         return category.products.all()
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        category_id = int(self.kwargs['category_id'])
+        category = get_object_or_404(Category, id=category_id)
+        context['category'] = category
+        return context
+
     context_object_name = 'products'
 
 
@@ -78,7 +85,7 @@ class CommentDeleteView(UserPassesTestMixin, generic.DeleteView):
         comment_id = int(self.kwargs['comment_id'])
         comment = get_object_or_404(Comment, id=comment_id)
         product_id = comment.product.id
-        messages.success(self.request, 'Comment deleted successfully')
+        messages.success(self.request, _('Comment deleted successfully'))
         return reverse_lazy('product_detail', args=[product_id])
 
     def test_func(self):
