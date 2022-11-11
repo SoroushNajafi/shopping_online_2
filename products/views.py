@@ -12,7 +12,7 @@ from .froms import CommentForm
 
 class CategoryListView(generic.ListView):
     model = Category
-    template_name = 'products/by_categories.html'
+    template_name = 'products/categories_list.html'
     context_object_name = 'categories'
 
 

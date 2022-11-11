@@ -1,0 +1,46 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block page_title %}{% trans 'Contact Us Page' %}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row content">
+            <div class="col-md-9">
+                {#            <div class="map">#}
+                {#            </div>#}
+                <div class="row contact-all">
+                    <div>
+                        <form id="contact-form" action="{% url 'contactus_form' %}" method="post">
+                            {% csrf_token %}
+                            <h1>{% trans 'contact us' %}</h1>
+                            <div class="text-fields">
+                                <div class="float-input">
+                                    <fieldset>
+                                        <input name="name" id="name" type="text" placeholder="Name" required="">
+                                    </fieldset>
+                                    {{ form_errors }}
+                                    <span><i class="fa fa-user"></i></span>
+                                </div>
+                                <div class="float-input">
+                                    <fieldset>
+                                        <input name="email" id="mail" type="text" placeholder="e-mail" required="">
+                                    </fieldset>
+                                    <span><i class="fa fa-envelope-o"></i></span>
+                                </div>
+                            </div>
+                            <div class="submit-area">
+                                <fieldset>
+                                    <textarea name="message" id="comment" placeholder="Message" required=""></textarea>
+                                </fieldset>
+                                <button type="submit" class="btn" style="background-color: #6d534c;color: white">{% trans 'Send' %}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% include 'shop_sidebar.html' %}
+        </div>
+    </div>
+{% endblock %}
