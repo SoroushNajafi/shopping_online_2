@@ -5,5 +5,5 @@ from .models import Contact
 
 @admin.register(Contact)
 class ContactUsAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', )
+    list_display = ('name', 'email', 'datetime_created')
 

@@ -6,5 +6,7 @@ class Contact(models.Model):
     email = models.EmailField()
     message = models.TextField()
 
+    datetime_created = models.DateTimeField(auto_now_add=True, null=True)
+
     def __str__(self):
         return self.email

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-11 10:54+0330\n"
+"POT-Creation-Date: 2022-11-12 15:18+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,22 +16,52 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-#: .\templates\pages\aboutus.html:4 .\templates\pages\aboutus.html:8
+
+#: .\pages\templates\pages\aboutus.html:4
+#: .\pages\templates\pages\aboutus.html:8
 msgid "About Us Page"
 msgstr "درباره ما"
 
-#: .\templates\pages\home.html:5
+#: .\pages\templates\pages\contactus.html:5
+#, fuzzy
+#| msgid "About Us Page"
+msgid "Contact Us Page"
+msgstr "درباره ما"
+
+#: .\pages\templates\pages\contactus.html:17
+msgid "contact us"
+msgstr ""
+
+#: .\pages\templates\pages\contactus.html:37
+msgid "Send"
+msgstr ""
+
+#: .\pages\templates\pages\home.html:5
 msgid "Home Page"
 msgstr "خانه"
 
-#: .\templates\pages\home.html:13
+#: .\pages\templates\pages\home.html:13
 msgid "We are Delicio"
 msgstr "ما دلیشیو هستیم"
 
-#: .\templates\pages\home.html:14
+#: .\pages\templates\pages\home.html:14
 msgid "ideal for every Chocoholic"
 msgstr "ایده‌آل برای عاشقان شکلات"
 
-#: .\templates\pages\home.html:15
+#: .\pages\templates\pages\home.html:15
 msgid "Go Shopping"
 msgstr "برو به خرید"
+
+#: .\pages\views.py:39
+msgid "Thank you for contacting us"
+msgstr ""
+
+#: .\pages\views.py:40
+msgid ""
+"Hi {sent_name}, you have sent a message to our team, we will reach back to "
+"you soon, :-)"
+msgstr ""
+
+#: .\pages\views.py:45
+msgid "Your message is sent successfully."
+msgstr ""

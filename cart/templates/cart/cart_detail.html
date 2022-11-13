@@ -49,7 +49,7 @@
                                     <a href="{{ item.product_obj.get_absolute_url }}">{{ item.product_obj.title }}</a>
                                 </td>
                                 <td>
-                                    {% translate '$' %}{{ item.product_obj.price|intcomma|translate_number }}
+                                    {% translate '$' %}{{ item.product_obj.price|translate_number|intcomma }}
                                 </td>
                                 <td>
                                     <form action='{% url 'cart:add_to_cart' item.product_obj.id %}' method="post">
@@ -70,7 +70,7 @@
                                     </form>
                                 </td>
                                 <td class="cart-total">
-                                    {% translate '$' %}{{ item.total_price|intcomma|translate_number }}
+                                    {% translate '$' %}{{ item.total_price|translate_number|intcomma }}
                                 </td>
                                 <td>
                                     <a href="{% url 'cart:remove_from_cart' item.product_obj.id %}"><p>&#10008;</p></a>
@@ -96,7 +96,7 @@
                                     {% trans 'Cart Subtotal' %}
                                 </th>
                                 <td>
-                                    <strong>{% trans '$' %}{{ cart.get_total_price|intcomma|translate_number }}</strong>
+                                    <strong>{% trans '$' %}{{ cart.get_total_price|translate_number|intcomma }}</strong>
                                 </td>
                             </tr>
                             <tr>
@@ -112,7 +112,7 @@
                                     {% trans 'Order Total' %}
                                 </th>
                                 <td>
-                                    <strong>{% trans '$' %}{{ cart.get_total_price|intcomma|translate_number }}</strong>
+                                    <strong>{% trans '$' %}{{ cart.get_total_price|translate_number|intcomma }}</strong>
                                 </td>
                             </tr>
                             </tbody>
