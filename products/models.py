@@ -8,9 +8,9 @@ from ckeditor.fields import RichTextField
 
 class Category(models.Model):
     CATEGORY_CHOICES = (
-        ('White Chocolate', 'White Chocolate'),
-        ('Dark Chocolate', 'Dark Chocolate'),
-        ('Nuts Chocolate', 'Nuts Chocolate'),
+        ('White Chocolate', _('White Chocolate')),
+        ('Dark Chocolate', _('Dark Chocolate')),
+        ('Nuts Chocolate', _('Nuts Chocolate')),
     )
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=30, null=True)
     cover = models.ImageField(upload_to='category/category_cover', blank=True)

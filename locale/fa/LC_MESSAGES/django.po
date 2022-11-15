@@ -8,14 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-12 15:17+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2022-11-14 11:06+0330\n"
+"PO-Revision-Date: 2022-11-15 07:47+0000\n"
+"Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
 
 #: .\templates\account\email\email_confirmation_message.txt:5
 #, python-format
@@ -28,15 +29,38 @@ msgid ""
 "%(activate_url)s\n"
 "\n"
 msgstr ""
+"\n"
+"سلام %(user_display)s از طرف %(site_name)s.\n"
+"برای تایید ثبت نام، لطفا روی لینک زیر کلیک کنید:\n"
+"%(activate_url)s\n"
 
 #: .\templates\account\email\email_confirmation_subject.txt:3
 msgid "Signup confirm email"
+msgstr "ایمیل تایید ثبت نام"
+
+#: .\templates\account\email\password_reset_key_message.txt:3
+#, python-format
+msgid ""
+"\n"
+"Hello, %(user.username)s\n"
+"Someone just asked for password reset on this email %(email)s\n"
+"\n"
+"If you requested this email please follow the link below to reset your password:\n"
+"%(password_reset_url)s\n"
+"\n"
+"In case you forgot your username: %(user.username)s\n"
 msgstr ""
+"\n"
+"سلام ,  %(user.username)s\n"
+"شخصی به تازگی در این ایمیل درخواست بازنشانی رمز عبور کرده است %(email)s\n"
+"اگر این ایمیل را درخواست کردید، لطفاً پیوند زیر را برای بازنشانی رمز عبور خود دنبال کنید:\n"
+"%(password_reset_url)s\n"
+"در صورتی که نام کاربری خود را فراموش کرده اید: %(user.username)s\n"
 
 #: .\templates\account\email_confirm.html:6
 #: .\templates\account\email_confirm.html:10
 msgid "Confirm E-mail Address"
-msgstr ""
+msgstr "آدرس ایمیل را تایید کنید"
 
 #: .\templates\account\email_confirm.html:16
 #, python-format
@@ -44,178 +68,354 @@ msgid ""
 "Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
 "address for user %(user_display)s."
 msgstr ""
+"لطفا  تایید کنید که  <a href=\"mailto:%(email)s\">%(email)s</a>  آدرس ایمیل "
+"برای کاربر %(user_display)s."
 
 #: .\templates\account\email_confirm.html:20
 msgid "Confirm"
-msgstr ""
+msgstr "تایید "
 
 #: .\templates\account\email_confirm.html:27
 #, python-format
 msgid ""
-"This e-mail confirmation link expired or is invalid. Please <a href=\"%"
-"(email_url)s\">issue a new e-mail confirmation request</a>."
+"This e-mail confirmation link expired or is invalid. Please <a "
+"href=\"%(email_url)s\">issue a new e-mail confirmation request</a>."
 msgstr ""
+"این پیوند تأیید ایمیل منقضی شده یا نامعتبر است. لطفا <a "
+"href=\"%(email_url)s\"> یک درخواست تایید ایمیل جدید صادر کنید </a>."
+
+#: .\templates\account\login.html:5
+msgid "Login Page"
+msgstr "صفحه ورود"
+
+#: .\templates\account\login.html:10 .\templates\account\login.html:15
+#: .\templates\account\password_reset_from_key_done.html:14
+#: .\templates\header.html:16
+msgid "Login"
+msgstr "ورود"
+
+#: .\templates\account\login.html:18
+#: .\templates\account\password_change.html:19
+msgid "Forgotten password?"
+msgstr "فراموشی  رمز عبور؟"
+
+#: .\templates\account\logout.html:4
+msgid "Logout Page"
+msgstr "صفحه خروج"
+
+#: .\templates\account\logout.html:9 .\templates\account\logout.html:14
+#: .\templates\header.html:11
+msgid "Logout"
+msgstr "خروج"
+
+#: .\templates\account\logout.html:11
+msgid "Are you sure you want to log out?"
+msgstr "آیا برای خارج شدن مطمئن هستید؟"
+
+#: .\templates\account\password_change.html:6
+#: .\templates\account\password_change.html:11
+msgid "Change Password"
+msgstr "تغییر رمز عبور"
+
+#: .\templates\account\password_change.html:16
+msgid "Change password"
+msgstr "تغییر رمز عبور"
+
+#: .\templates\account\password_reset.html:5
+msgid "Forgotten Password"
+msgstr "فراموشی  رمز عبور"
+
+#: .\templates\account\password_reset.html:10
+msgid "Forgotten Password?"
+msgstr "فراموشی  رمز عبور؟"
+
+#: .\templates\account\password_reset.html:12
+msgid "please enter your email address, and we send you instructions."
+msgstr ""
+"لطفا آدرس ایمیل خود را وارد کنید، و ما دستورالعمل ها را برای شما ارسال می "
+"کنیم."
+
+#: .\templates\account\password_reset.html:17
+msgid "Send"
+msgstr "ارسال "
+
+#: .\templates\account\password_reset_done.html:4
+msgid "Email Sent"
+msgstr "ایمیل ارسال شد"
+
+#: .\templates\account\password_reset_done.html:9
+msgid "Email has been sent"
+msgstr "ایمیل ارسال شده است"
+
+#: .\templates\account\password_reset_done.html:11
+msgid ""
+"please check your email and follow the instructions to reset your password."
+msgstr ""
+"لطفا ایمیل خود را بررسی کنید و دستورالعمل ها را برای بازنشانی رمز عبور خود "
+"دنبال کنید."
+
+#: .\templates\account\password_reset_from_key.html:5
+msgid "password reset"
+msgstr "تنظیم مجدد رمز عبور"
+
+#: .\templates\account\password_reset_from_key.html:9
+msgid "reset password"
+msgstr "تنظیم مجدد رمز عبور"
+
+#: .\templates\account\password_reset_from_key.html:14
+#: .\templates\header.html:12
+msgid "change password"
+msgstr "تغییر رمز عبور"
+
+#: .\templates\account\password_reset_from_key_done.html:5
+msgid "Successfully reset password"
+msgstr "رمز عبور با موفقیت بازنشانی شد"
+
+#: .\templates\account\password_reset_from_key_done.html:10
+msgid "Reset Password"
+msgstr "تنظیم مجدد رمز عبور"
+
+#: .\templates\account\password_reset_from_key_done.html:12
+msgid "Your password is now reset."
+msgstr "رمز عبور شما اکنون بازنشانی شده است."
+
+#: .\templates\account\signup.html:5 .\templates\footer.html:10
+#: .\templates\footer.html:50
+msgid "Delicio Website"
+msgstr "وب سایت دلیشیو"
+
+#: .\templates\account\signup.html:10 .\templates\account\signup.html:15
+msgid "Signup"
+msgstr "ثبت نام"
+
+#: .\templates\footer.html:12
+msgid "South Washington Street 828,Washington,USA"
+msgstr "خیابان واشنگتن جنوبی 828، واشنگتن، ایالات متحده آمریکا"
+
+#: .\templates\footer.html:15
+msgid "Phone 0123 456 789/0123 456 788"
+msgstr "تلفن +989357303263"
+
+#: .\templates\footer.html:19
+msgid "my Account"
+msgstr "حساب من"
+
+#: .\templates\footer.html:21
+msgid "cart"
+msgstr "سبد خرید"
+
+#: .\templates\footer.html:22
+msgid "checkout"
+msgstr "پرداخت"
+
+#: .\templates\footer.html:23
+msgid "my accout"
+msgstr "حساب من"
+
+#: .\templates\footer.html:27
+msgid "Informations"
+msgstr "اطلاعات"
+
+#: .\templates\footer.html:29
+msgid "costumer assistance"
+msgstr "کمک به مشتری"
+
+#: .\templates\footer.html:30
+msgid "delivery informations"
+msgstr "اطلاعات تحویل"
+
+#: .\templates\footer.html:31
+msgid "international shipping"
+msgstr "حمل و نقل بین المللی"
+
+#: .\templates\footer.html:35
+msgid "about us"
+msgstr "درباره ما"
+
+#: .\templates\footer.html:37
+msgid ""
+"Delicio is a distributor of premium chocolate, confectioneries and specialty foods\n"
+"                        from around the world. We pride ourselves in offering both exceptional products and customer\n"
+"                        service at highly competitive prices."
+msgstr ""
+"دلیشیو توزیع کننده شکلات ممتاز، شیرینی و غذاهای ویژه است, از سرتاسر جهان. ما"
+" به ارائه محصولات استثنایی و مشتری افتخار می کنیم, خدمات با قیمت های بسیار "
+"رقابتی."
 
 #: .\templates\header.html:10
 msgid "Welcome"
-msgstr ""
+msgstr "خوش آمدید"
 
-#: .\templates\header.html:11
-msgid "Logout"
-msgstr ""
-
-#: .\templates\header.html:15
-msgid "Login"
-msgstr ""
-
-#: .\templates\header.html:17
+#: .\templates\header.html:18
 msgid "Singup"
-msgstr ""
+msgstr "ثبت نام"
 
-#: .\templates\header.html:29
-msgid "langauge"
-msgstr "زبان"
+#: .\templates\header.html:30
+#| msgid "langauge"
+msgid "Select Language"
+msgstr "انتخاب زبان"
+
+#: .\templates\header.html:45
+msgid "My Account"
+msgstr "حساب من"
+
+#: .\templates\header.html:70
+msgid "Home"
+msgstr "خانه"
+
+#: .\templates\header.html:71
+msgid "Shop"
+msgstr "خرید"
+
+#: .\templates\header.html:75 .\templates\shop_sidebar.html:17
+msgid "Categories"
+msgstr "دسته بندی ها"
 
 #: .\templates\header.html:82
+msgid "Cart"
+msgstr "سبد خرید"
+
+#: .\templates\header.html:84
 msgid "About us"
-msgstr ""
+msgstr "درباره ما"
 
-#: .\templates\header.html:83
+#: .\templates\header.html:85
 msgid "Contact Us"
-msgstr ""
-
-#: .\templates\shop_sidebar.html:17
-msgid "Categories"
-msgstr ""
+msgstr " تماس با ما"
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\forms.py:6
 msgid "Search files"
-msgstr ""
+msgstr "جستجوی فایل ها"
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:5
 msgid "Select an image to embed"
-msgstr ""
+msgstr "یک تصویر را برای جاسازی انتخاب کنید"
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:27
 msgid "Browse for the image you want, then click 'Embed Image' to continue..."
 msgstr ""
+"تصویر مورد نظر خود را مرور کنید، سپس برای ادامه روی «جاسازی تصویر» کلیک "
+"کنید..."
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:29
 msgid ""
 "No images found. Upload images using the 'Image Button' dialog's 'Upload' "
 "tab."
 msgstr ""
+"هیچ تصویری یافت نشد تصاویر را با استفاده از برگه «آپلود» گفتگوی «دکمه تصویر»"
+" آپلود کنید."
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:50
 msgid "Images in: "
-msgstr ""
+msgstr "تصاویر در:"
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:62
 #: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:80
 msgid "Embed Image"
-msgstr ""
+msgstr "جاسازی تصویر"
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:146
 msgid "Play Slideshow"
-msgstr ""
+msgstr "پخش نمایش اسلاید"
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:147
 msgid "Pause Slideshow"
-msgstr ""
+msgstr "توقف نمایش اسلاید"
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:148
 msgid "&lsaquo; Previous Photo"
-msgstr ""
+msgstr "&lsaquo; عکس قبلی"
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:149
 msgid "Next Photo &rsaquo;"
-msgstr ""
+msgstr "عکس بعدی &rsaquo;"
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:150
 msgid "Next &rsaquo;"
-msgstr ""
+msgstr "بعدی &rsaquo;"
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:151
 msgid "&lsaquo; Prev"
-msgstr ""
+msgstr "قبلی &lsaquo; "
 
 #: .\venv\Lib\site-packages\crispy_forms\tests\test_form_helper.py:130
 #: .\venv\Lib\site-packages\crispy_forms\tests\test_form_helper.py:140
 #: .\venv\Lib\site-packages\django\forms\fields.py:91
 msgid "This field is required."
-msgstr ""
+msgstr "این فیلد الزامی است."
 
 #: .\venv\Lib\site-packages\crispy_forms\tests\test_layout.py:392
 msgid "i18n text"
-msgstr ""
+msgstr "متن i18n"
 
 #: .\venv\Lib\site-packages\crispy_forms\tests\test_layout.py:394
 msgid "i18n legend"
-msgstr ""
+msgstr "افسانه i18n"
 
 #: .\venv\Lib\site-packages\crispy_forms\tests\test_layout_objects.py:143
 #: .\venv\Lib\site-packages\django\core\validators.py:22
 msgid "Enter a valid value."
-msgstr ""
+msgstr "یک مقدار معتبر وارد کنید."
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:15
 msgid "Messages"
-msgstr ""
+msgstr "پیام ها"
 
 #: .\venv\Lib\site-packages\django\contrib\sitemaps\apps.py:8
 msgid "Site Maps"
-msgstr ""
+msgstr "نقشه های سایت"
 
 #: .\venv\Lib\site-packages\django\contrib\staticfiles\apps.py:9
 msgid "Static Files"
-msgstr ""
+msgstr "فایل های استاتیک"
 
 #: .\venv\Lib\site-packages\django\contrib\syndication\apps.py:7
 msgid "Syndication"
-msgstr ""
+msgstr "سندیکا"
 
 #. Translators: String used to replace omitted page numbers in elided page
 #. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
 #: .\venv\Lib\site-packages\django\core\paginator.py:30
 msgid "…"
-msgstr ""
+msgstr "..."
 
 #: .\venv\Lib\site-packages\django\core\paginator.py:50
 msgid "That page number is not an integer"
-msgstr ""
+msgstr "آن شماره صفحه یک عدد صحیح نیست"
 
 #: .\venv\Lib\site-packages\django\core\paginator.py:52
 msgid "That page number is less than 1"
-msgstr ""
+msgstr "این شماره صفحه کمتر از 1 است"
 
 #: .\venv\Lib\site-packages\django\core\paginator.py:57
 msgid "That page contains no results"
-msgstr ""
+msgstr "آن صفحه هیچ نتیجه ای ندارد"
 
 #: .\venv\Lib\site-packages\django\core\validators.py:104
 #: .\venv\Lib\site-packages\django\forms\fields.py:751
 msgid "Enter a valid URL."
-msgstr ""
+msgstr "یک URL معتبر وارد کنید."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:164
 msgid "Enter a valid integer."
-msgstr ""
+msgstr "یک عدد صحیح معتبر وارد کنید."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:175
 msgid "Enter a valid email address."
-msgstr ""
+msgstr "یک آدرس ایمیل معتبر وارد کنید."
 
 #. Translators: "letters" means latin letters: a-z and A-Z.
 #: .\venv\Lib\site-packages\django\core\validators.py:256
 msgid ""
 "Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
-msgstr ""
+msgstr "یک \"Slug\" معتبر متشکل از حروف، اعداد، زیرخط یا خط فاصله وارد کنید."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:264
 msgid ""
-"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
-"hyphens."
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or"
+" hyphens."
 msgstr ""
+"یک \"Slug\" معتبر متشکل از حروف یونیکد، اعداد، زیرخط یا خط تیره وارد کنید."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:276
 #: .\venv\Lib\site-packages\django\core\validators.py:284
@@ -260,22 +460,22 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\core\validators.py:417
 #, python-format
 msgid ""
-"Ensure this value has at least %(limit_value)d character (it has %"
-"(show_value)d)."
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
 msgid_plural ""
-"Ensure this value has at least %(limit_value)d characters (it has %"
-"(show_value)d)."
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
 msgstr[0] ""
 msgstr[1] ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:435
 #, python-format
 msgid ""
-"Ensure this value has at most %(limit_value)d character (it has %(show_value)"
-"d)."
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
 msgid_plural ""
-"Ensure this value has at most %(limit_value)d characters (it has %"
-"(show_value)d)."
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
 msgstr[0] ""
 msgstr[1] ""
 
@@ -283,21 +483,21 @@ msgstr[1] ""
 #: .\venv\Lib\site-packages\django\forms\fields.py:347
 #: .\venv\Lib\site-packages\django\forms\fields.py:386
 msgid "Enter a number."
-msgstr ""
+msgstr "یک عدد وارد کنید"
 
 #: .\venv\Lib\site-packages\django\core\validators.py:460
 #, python-format
 msgid "Ensure that there are no more than %(max)s digit in total."
 msgid_plural "Ensure that there are no more than %(max)s digits in total."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "اطمینان حاصل کنید که بیشتر از%(max)s در مجموع رقم  وجود ندارد"
+msgstr[1] "اطمینان حاصل کنید که بیشتر از%(max)s در مجموع ارقام  وجود ندارد"
 
 #: .\venv\Lib\site-packages\django\core\validators.py:465
 #, python-format
 msgid "Ensure that there are no more than %(max)s decimal place."
 msgid_plural "Ensure that there are no more than %(max)s decimal places."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "اطمینان حاصل کنید که بیشتر از%(max)s در رقم اعشاروجود ندارد"
+msgstr[1] "اطمینان حاصل کنید که بیشتر از%(max)s در ارقام اعشاروجود ندارد"
 
 #: .\venv\Lib\site-packages\django\core\validators.py:470
 #, python-format
@@ -306,51 +506,55 @@ msgid ""
 msgid_plural ""
 "Ensure that there are no more than %(max)s digits before the decimal point."
 msgstr[0] ""
+"اطمینان حاصل کنید که بیشتر از%(max)s رقم قبل از نقطه اعشار وجود ندارد"
 msgstr[1] ""
+"اطمینان حاصل کنید که بیشتر از%(max)s ارقام قبل از نقطه اعشار وجود ندارد"
 
 #: .\venv\Lib\site-packages\django\core\validators.py:539
 #, python-format
 msgid ""
-"File extension “%(extension)s” is not allowed. Allowed extensions are: %"
-"(allowed_extensions)s."
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
 msgstr ""
+"فرمت فایل %(extension)s مجاز نیست. پسوندهای مجاز عبارتند از: "
+"%(allowed_extensions)s."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:600
 msgid "Null characters are not allowed."
-msgstr ""
+msgstr "کاراکترهای پوچ مجاز نیستند."
 
 #: .\venv\Lib\site-packages\django\db\models\base.py:1401
 #: .\venv\Lib\site-packages\django\forms\models.py:899
 msgid "and"
-msgstr ""
+msgstr "و"
 
 #: .\venv\Lib\site-packages\django\db\models\base.py:1403
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
-msgstr ""
+msgstr "%(model_name)s  با این %(field_labels)s درحال حاضر موجود است."
 
 #: .\venv\Lib\site-packages\django\db\models\constraints.py:17
 #, python-format
 msgid "Constraint “%(name)s” is violated."
-msgstr ""
+msgstr "محدودیت “%(name)s” نقض می شود"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:129
 #, python-format
 msgid "Value %(value)r is not a valid choice."
-msgstr ""
+msgstr "مقدار  %(value)r انتخاب معتبری نیست."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:130
 msgid "This field cannot be null."
-msgstr ""
+msgstr "این فیلد نمی تواند null باشد."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:131
 msgid "This field cannot be blank."
-msgstr ""
+msgstr "این فیلد نمی تواند خالی باشد."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:132
 #, python-format
 msgid "%(model_name)s with this %(field_label)s already exists."
-msgstr ""
+msgstr "%(model_name)s با این %(field_label)s درحال حاضر وجود دارد."
 
 #. Translators: The 'lookup_type' is one of 'date', 'year' or
 #. 'month'. Eg: "Title must be unique for pub_date year"
@@ -359,34 +563,35 @@ msgstr ""
 msgid ""
 "%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
 msgstr ""
+"%(field_label)s باید منحصر به فرد برای %(date_field_label)s %(lookup_type)s"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:174
 #, python-format
 msgid "Field of type: %(field_type)s"
-msgstr ""
+msgstr "زمینه نوع: %(field_type)s"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1065
 #, python-format
 msgid "“%(value)s” value must be either True or False."
-msgstr ""
+msgstr "“%(value)s”  مقدار باید درست یا نادرست باشد."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1066
 #, python-format
 msgid "“%(value)s” value must be either True, False, or None."
-msgstr ""
+msgstr "“%(value)s” مقدار باید True، False یا None باشد."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1068
 msgid "Boolean (Either True or False)"
-msgstr ""
+msgstr "بولی (درست یا نادرست)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1118
 #, python-format
 msgid "String (up to %(max_length)s)"
-msgstr ""
+msgstr "رشته (تا  %(max_length)s )"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1222
 msgid "Comma-separated integers"
-msgstr ""
+msgstr "اعداد صحیح جدا شده با کاما"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1323
 #, python-format
@@ -410,15 +615,15 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1458
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
-"uuuuuu]][TZ] format."
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1466
 #, python-format
 msgid ""
-"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-"[TZ]) but it is an invalid date/time."
+"“%(value)s” value has the correct format (YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1471
@@ -437,8 +642,8 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1754
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
-"uuuuuu] format."
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1758
@@ -447,11 +652,11 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1810
 msgid "Email address"
-msgstr ""
+msgstr "آدرس ایمیل"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1835
 msgid "File path"
-msgstr ""
+msgstr "مسیر فایل"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1913
 #, python-format
@@ -597,7 +802,8 @@ msgid "Many-to-many relationship"
 msgstr ""
 
 #. Translators: If found as last label character, these punctuation
-#. characters will prevent the default label_suffix to be appended to the label
+#. characters will prevent the default label_suffix to be appended to the
+#. label
 #: .\venv\Lib\site-packages\django\forms\boundfield.py:176
 msgid ":?.!"
 msgstr ""
@@ -642,7 +848,8 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:622
 #, python-format
-msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid ""
+"Ensure this filename has at most %(max)d character (it has %(length)d)."
 msgid_plural ""
 "Ensure this filename has at most %(max)d characters (it has %(length)d)."
 msgstr[0] ""
@@ -697,8 +904,8 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\forms\formsets.py:63
 #, python-format
 msgid ""
-"ManagementForm data is missing or has been tampered with. Missing fields: %"
-"(field_names)s. You may need to file a bug report if the issue persists."
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\formsets.py:67
@@ -750,7 +957,8 @@ msgid "The inline value did not match the parent instance."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1435
-msgid "Select a valid choice. That choice is not one of the available choices."
+msgid ""
+"Select a valid choice. That choice is not one of the available choices."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1574
@@ -1216,11 +1424,11 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:127
 msgid ""
-"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
-"including the “Referrer-Policy: no-referrer” header, please remove them. The "
-"CSRF protection requires the “Referer” header to do strict referer checking. "
-"If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer"
-"\" …> for links to third-party sites."
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
+" including the “Referrer-Policy: no-referrer” header, please remove them. "
+"The CSRF protection requires the “Referer” header to do strict referer "
+"checking. If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:136
@@ -1271,8 +1479,8 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:652
 #, python-format
 msgid ""
-"Future %(verbose_name_plural)s not available because %(class_name)s."
-"allow_future is False."
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:692
@@ -1328,10 +1536,10 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:222
 #, python-format
 msgid ""
-"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-"\">DEBUG=True</a> is in your settings file and you have not configured any "
-"URLs."
+"You are seeing this page because <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
+"and you have not configured any URLs."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:230

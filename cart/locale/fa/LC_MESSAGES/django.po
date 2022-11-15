@@ -9,13 +9,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-11 20:22+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2022-11-14 12:00+0000\n"
+"Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
 
 #: .\cart\cart.py:38
 msgid "Product successfully added to Cart"
@@ -85,7 +86,6 @@ msgid "Shipping and Handling"
 msgstr "ارسال"
 
 #: .\cart\templates\cart\cart_detail.html:107
-#, fuzzy
 #| msgid "Go Shopping"
 msgid "Free Shipping"
 msgstr "ارسال رایگان"

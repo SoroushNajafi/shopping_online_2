@@ -8,156 +8,167 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-11 20:22+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2022-11-15 10:59+0330\n"
+"PO-Revision-Date: 2022-11-15 07:56+0000\n"
+"Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\products\models.py:51
+#: .\models.py:11
+msgid "White Chocolate"
+msgstr "شکلات سفید"
+
+#: .\models.py:12
+msgid "Dark Chocolate"
+msgstr "شکلات تلخ"
+
+#: .\models.py:13
+msgid "Nuts Chocolate"
+msgstr "شکلات مغزدار"
+
+#: .\models.py:51
 msgid "Very Poor"
 msgstr "خیلی ضعیف"
 
-#: .\products\models.py:52
+#: .\models.py:52
 msgid "Poor"
 msgstr "ضعیف"
 
-#: .\products\models.py:53
+#: .\models.py:53
 msgid "Normal"
 msgstr "معمولی"
 
-#: .\products\models.py:54
+#: .\models.py:54
 msgid "Good"
 msgstr "خوب"
 
-#: .\products\models.py:55
+#: .\models.py:55
 msgid "Perfect"
 msgstr "عالی"
 
-#: .\products\models.py:63
+#: .\models.py:63
 msgid "comment author"
 msgstr "نویسنده نظر"
 
-#: .\products\models.py:65
+#: .\models.py:65
 msgid "comment text"
 msgstr "متن نظر"
 
-#: .\products\models.py:66
+#: .\models.py:66
 msgid "your score to this product"
 msgstr "امتیاز شما به این محصول"
 
-#: .\products\models.py:67
+#: .\models.py:67
 msgid "active"
 msgstr "فعال"
 
-#: .\products\templates\products\categories_list.html:4
+#: .\templates\products\categories_list.html:4
 msgid "Category list"
 msgstr "لیست دسته بندی"
 
-#: .\products\templates\products\categories_list.html:12
+#: .\templates\products\categories_list.html:12
 msgid "Categories"
 msgstr "دسته بندی"
 
-#: .\products\templates\products\comment_delete.html:7
-#: .\products\templates\products\comment_delete.html:12
+#: .\templates\products\comment_delete.html:7
+#: .\templates\products\comment_delete.html:12
 msgid "Comment Delete"
 msgstr "حذف متن نظر"
 
-#: .\products\templates\products\comment_delete.html:16
+#: .\templates\products\comment_delete.html:16
 msgid "Are you sure you want to delete this comment?"
 msgstr "آیا میخواهید این نظر را حذف کنید؟"
 
-#: .\products\templates\products\comment_delete.html:17
+#: .\templates\products\comment_delete.html:17
 msgid "Yes Delete"
 msgstr "بله حذف شود"
 
-#: .\products\templates\products\comment_delete.html:20
+#: .\templates\products\comment_delete.html:20
 msgid "Never mind"
 msgstr "بیخیال"
 
-#: .\products\templates\products\comment_update.html:7
+#: .\templates\products\comment_update.html:7
 msgid "Comment update"
 msgstr "ویرایش نظر"
 
-#: .\products\templates\products\comment_update.html:12
+#: .\templates\products\comment_update.html:12
 msgid "Edit Comment"
 msgstr "ویرایش نظر"
 
-#: .\products\templates\products\comment_update.html:17
-#: .\products\templates\products\product_detail.html:151
+#: .\templates\products\comment_update.html:17
+#: .\templates\products\product_detail.html:151
 msgid "Edit"
 msgstr "ویرایش"
 
-#: .\products\templates\products\comment_update.html:20
+#: .\templates\products\comment_update.html:20
 msgid "Go Back"
 msgstr "برگرد"
 
-#: .\products\templates\products\product_detail.html:10
-#: .\products\templates\products\product_detail.html:17
+#: .\templates\products\product_detail.html:10
+#: .\templates\products\product_detail.html:17
 msgid "Product Detail"
 msgstr "جزییات محصول"
 
-#: .\products\templates\products\product_detail.html:51
-#: .\products\templates\products\product_list.html:43
-#: .\products\templates\products\products_by_category.html:43
+#: .\templates\products\product_detail.html:51
+#: .\templates\products\product_list.html:44
+#: .\templates\products\products_by_category.html:43
 msgid "$"
 msgstr "تومان"
 
-#: .\products\templates\products\product_detail.html:69
+#: .\templates\products\product_detail.html:69
 msgid "Add to Cart"
 msgstr "اضافه به سبد خرید"
 
-#: .\products\templates\products\product_detail.html:77
+#: .\templates\products\product_detail.html:77
 msgid "Score"
 msgstr "امتیاز"
 
-#: .\products\templates\products\product_detail.html:92
+#: .\templates\products\product_detail.html:92
 msgid "Drop your comment"
 msgstr "نظر خود را بنویسید"
 
-#: .\products\templates\products\product_detail.html:108
+#: .\templates\products\product_detail.html:108
 msgid "Post"
 msgstr "ارسال"
 
-#: .\products\templates\products\product_detail.html:112
+#: .\templates\products\product_detail.html:112
 msgid ""
 "You need to be logged in to drop comments, you can do so by clicking on "
 msgstr "شما برای ارسال نظر باید ورود کنید, شما میتوانید وارد شوید از طریق"
 
-#: .\products\templates\products\product_detail.html:114
+#: .\templates\products\product_detail.html:114
 msgid "Login"
 msgstr "ورود"
 
-#: .\products\templates\products\product_detail.html:156
+#: .\templates\products\product_detail.html:156
 msgid "Delete"
 msgstr "حذف"
 
-#: .\products\templates\products\product_list.html:4
-#, fuzzy
-#| msgid "Products"
+#: .\templates\products\product_list.html:5
 msgid "Product list"
 msgstr "لیست محصولات"
 
-#: .\products\templates\products\product_list.html:12
+#: .\templates\products\product_list.html:13
 msgid "Products"
 msgstr "محصولات"
 
-#: .\products\templates\products\products_by_category.html:4
+#: .\templates\products\products_by_category.html:4
 msgid "Products by Category list"
 msgstr "محصولات بر اساس دسنه بندی"
 
-#: .\products\templates\products\products_by_category.html:12
+#: .\templates\products\products_by_category.html:12
 msgid "Products by Category"
 msgstr "محصولات بر اساس دسنه بندی"
 
-#: .\products\views.py:64
+#: .\views.py:64
 msgid "Your comment successfully submitted"
 msgstr "نظر شما با موفقیت ثبت شد"
 
-#: .\products\views.py:88
+#: .\views.py:88
 msgid "Comment deleted successfully"
 msgstr "نظر شما با موفقیت حذف شد"
 

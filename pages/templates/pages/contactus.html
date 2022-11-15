@@ -18,21 +18,21 @@
                             <div class="text-fields">
                                 <div class="float-input">
                                     <fieldset>
-                                        <input name="name" id="name" type="text" placeholder="Name" required="">
+                                        <input name="name" id="name" type="text" placeholder={% trans "Name" %} required="">
                                     </fieldset>
                                     {{ form_errors }}
                                     <span><i class="fa fa-user"></i></span>
                                 </div>
                                 <div class="float-input">
                                     <fieldset>
-                                        <input name="email" id="mail" type="text" placeholder="e-mail" required="">
+                                        <input name="email" id="mail" type="text" placeholder={% trans "e-mail" %} required="">
                                     </fieldset>
                                     <span><i class="fa fa-envelope-o"></i></span>
                                 </div>
                             </div>
                             <div class="submit-area">
                                 <fieldset>
-                                    <textarea name="message" id="comment" placeholder="Message" required=""></textarea>
+                                    <textarea name="message" id="comment" placeholder={% trans "Message" %} required=""></textarea>
                                 </fieldset>
                                 <button type="submit" class="btn" style="background-color: #6d534c;color: white">{% trans 'Send' %}</button>
                             </div>

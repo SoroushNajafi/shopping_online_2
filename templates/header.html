@@ -1,5 +1,6 @@
 {% load i18n %}
 {% load static %}
+{% load path_modifier %}
 <!--top-strip-->
 <div class="top-strip">
     <div class="container">
@@ -23,11 +24,11 @@
                 <ul>
                     <li><a href="#">
                         <div class="dropdown">
-                            <button class="btn dropdown-toggle"
-                                    style="color: black" type="button"
+                            <button class="btn"
+                                    style="background-color: #6d534c;color: white" type="button"
                                     data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                {% trans 'langauge' %}
+                                {% trans 'Select Language' %}
                             </button>
                             <ul class="dropdown-menu">
                                 {% get_current_language as LANGUAGE_CODE %}
@@ -36,13 +37,13 @@
                                 {% for language in languages %}
 
                                     <li><a class="dropdown-item"
-                                           href="/{{ language.code }}/">{{ language.name_local }}</a></li>
+                                           href="/{{ language.code }}{{ request.path|path_modifier }}">{{ language.name_local }}</a></li>
 
                                 {% endfor %}
                             </ul>
                         </div>
                     </a></li>
-                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">{% trans 'My Account' %}</a></li>
                 </ul>
             </div>
         </div>
@@ -67,20 +68,19 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'product_list' %}">Shop</a></li>
+                    <li><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+                    <li><a href="{% url 'product_list' %}">{% trans 'Shop' %}</a></li>
                     {#                    <li><a href="single.html">Single</a></li>#}
                     <li class="dropdown">
                         <a href="{% url 'category_list' %}" data-toggle="dropdown"
-                           class="dropdown-toggle">Categories</a>
+                           class="dropdown-toggle">{% trans 'Categories' %}</a>
                         <ul class="dropdown-menu">
                             {% for category in categories %}
                                 <li><a href="{{ category.get_absolute_url }}">{{ category }}</a></li>
                             {% endfor %}
                         </ul>
                     </li>
-                    <li><a href="{% url 'cart:cart_detail' %}">Cart</a></li>
-
+                    <li><a href="{% url 'cart:cart_detail' %}">{% trans 'Cart' %}</a></li>
                     <li><a href="{% url 'aboutus' %}">{% trans 'About us' %}</a></li>
                     <li><a href="{% url 'contactus' %}">{% trans 'Contact Us' %}</a></li>
                 </ul>

@@ -1,17 +1,18 @@
 {% extends '_base.html' %}
 {% load crispy_forms_tags %}
+{% load i18n %}
 
-{% block page_title %}Signup Page{% endblock %}
+{% block page_title %}{% trans 'Delicio Website' %}{% endblock %}
 
 {% block content %}
     <br>
     <div class="container">
-      <h1 style="color:white;">Signup</h1>
+      <h1 style="color:white;">{% trans 'Signup' %}</h1>
         <hr>
     <form action="" method="post" style="color: white">
         {% csrf_token %}
         {{ form|crispy }}
-        <button class="btn btn-dark mt-1" type="submit" style="color: black">Signup</button>
+        <button class="btn btn-dark mt-1" type="submit" style="color: black">{% trans 'Signup' %}</button>
     </form>
     </div>
     <br>
