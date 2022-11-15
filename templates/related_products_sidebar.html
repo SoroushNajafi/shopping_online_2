@@ -1,0 +1,22 @@
+{% load static %}
+{% load i18n %}
+{% load persian_translation_tags %}
+
+<div class="col-md-3 shop-sidebar">
+    <div class="sidebar-widgets">
+        <div class="shop-widget">
+            <h4>{% trans 'Related Products' %}</h4>
+            <ul class="popular-product">
+                {% for product in products %}
+                <li>
+                    <a href="{{ product.get_absolute_url }}"><img alt="" src="{{ product.image.url }}"></a>
+                    <div>
+                        <h6><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></h6>
+                        <span>{% trans '$' %}{{ product.price|translate_number }}</span>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
