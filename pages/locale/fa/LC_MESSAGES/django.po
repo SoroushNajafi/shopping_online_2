@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-15 11:11+0330\n"
+"POT-Creation-Date: 2022-11-15 20:38+0330\n"
 "PO-Revision-Date: 2022-11-15 07:37+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\templates\pages\aboutus.html:4 .\templates\pages\aboutus.html:9
+#: .\pages\templates\pages\aboutus.html:4
+#: .\pages\templates\pages\aboutus.html:9
 msgid "About Us Page"
 msgstr "صفحه  درباره ما"
 
-#: .\templates\pages\aboutus.html:11
+#: .\pages\templates\pages\aboutus.html:11
 msgid ""
 "Delicio is a distributor of premium chocolate, confectioneries and specialty "
 "foods from around the\n"
@@ -49,51 +50,51 @@ msgstr ""
 "        برای به دست آوردن و حفظ اعتماد شما به عنوان یک منبع خرید ارزشمند، "
 "سخت کار خواهد کرد"
 
-#: .\templates\pages\contactus.html:5
+#: .\pages\templates\pages\contactus.html:5
 msgid "Contact Us Page"
 msgstr "صفحه تماس  با ما"
 
-#: .\templates\pages\contactus.html:17
+#: .\pages\templates\pages\contactus.html:17
 msgid "contact us"
 msgstr "تماس  با ما"
 
-#: .\templates\pages\contactus.html:21
+#: .\pages\templates\pages\contactus.html:21
 msgid "Name"
 msgstr "نام"
 
-#: .\templates\pages\contactus.html:28
+#: .\pages\templates\pages\contactus.html:28
 msgid "e-mail"
 msgstr "ایمیل"
 
-#: .\templates\pages\contactus.html:35
+#: .\pages\templates\pages\contactus.html:35
 msgid "Message"
 msgstr "پیام"
 
-#: .\templates\pages\contactus.html:37
+#: .\pages\templates\pages\contactus.html:37
 msgid "Send"
 msgstr "ارسال"
 
-#: .\templates\pages\home.html:5
+#: .\pages\templates\pages\home.html:5
 msgid "Home Page"
 msgstr "خانه"
 
-#: .\templates\pages\home.html:13
+#: .\pages\templates\pages\home.html:13
 msgid "We are Delicio"
 msgstr "ما دلیشیو هستیم"
 
-#: .\templates\pages\home.html:14
+#: .\pages\templates\pages\home.html:14
 msgid "ideal for every Chocoholic"
 msgstr "ایده‌آل برای عاشقان شکلات"
 
-#: .\templates\pages\home.html:15
+#: .\pages\templates\pages\home.html:15
 msgid "Go Shopping"
 msgstr "برو به خرید"
 
-#: .\views.py:39
+#: .\pages\views.py:39
 msgid "Thank you for contacting us"
 msgstr "از اینکه با ما تماس گرفتید، متشکریم"
 
-#: .\views.py:40
+#: .\pages\views.py:40
 msgid ""
 "Hi {sent_name}, you have sent a message to our team, we will reach back to "
 "you soon, :-)"
@@ -101,6 +102,6 @@ msgstr ""
 "سلام {sent_name}, شما یک پیام به تیم ما ارسال کرده اید، ما به زودی با شما "
 "تماس خواهیم گرفت، :-)"
 
-#: .\views.py:45
+#: .\pages\views.py:45
 msgid "Your message is sent successfully."
 msgstr "پیام شما با موفقیت ارسال شد"

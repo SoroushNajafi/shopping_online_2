@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-11 20:22+0330\n"
+"POT-Creation-Date: 2022-11-15 20:38+0330\n"
 "PO-Revision-Date: 2022-11-14 12:00+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -86,7 +86,6 @@ msgid "Shipping and Handling"
 msgstr "ارسال"
 
 #: .\cart\templates\cart\cart_detail.html:107
-#| msgid "Go Shopping"
 msgid "Free Shipping"
 msgstr "ارسال رایگان"
 

@@ -4,19 +4,24 @@ from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 from ckeditor.fields import RichTextField
+from django.utils.translation import get_language
 
 
 class Category(models.Model):
-    CATEGORY_CHOICES = (
-        ('White Chocolate', _('White Chocolate')),
-        ('Dark Chocolate', _('Dark Chocolate')),
-        ('Nuts Chocolate', _('Nuts Chocolate')),
-    )
-    category = models.CharField(choices=CATEGORY_CHOICES, max_length=30, null=True)
+
+    en_title = models.CharField(max_length=30, null=True)
+    fa_title = models.CharField(max_length=30, null=True)
     cover = models.ImageField(upload_to='category/category_cover', blank=True)
 
+    def get_name(self):
+        current_lang = get_language()
+        if current_lang == 'en':
+            return self.en_title
+        else:
+            return self.fa_title
+
     def __str__(self):
-        return self.category
+        return self.en_title
 
     def get_absolute_url(self):
         return reverse('products_by_category', args=[self.id])

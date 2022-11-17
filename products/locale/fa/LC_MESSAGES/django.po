@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-15 10:59+0330\n"
+"POT-Creation-Date: 2022-11-17 16:06+0330\n"
 "PO-Revision-Date: 2022-11-15 07:56+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,51 +18,39 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\models.py:11
-msgid "White Chocolate"
-msgstr "شکلات سفید"
-
-#: .\models.py:12
-msgid "Dark Chocolate"
-msgstr "شکلات تلخ"
-
-#: .\models.py:13
-msgid "Nuts Chocolate"
-msgstr "شکلات مغزدار"
-
-#: .\models.py:51
+#: .\models.py:56
 msgid "Very Poor"
 msgstr "خیلی ضعیف"
 
-#: .\models.py:52
+#: .\models.py:57
 msgid "Poor"
 msgstr "ضعیف"
 
-#: .\models.py:53
+#: .\models.py:58
 msgid "Normal"
 msgstr "معمولی"
 
-#: .\models.py:54
+#: .\models.py:59
 msgid "Good"
 msgstr "خوب"
 
-#: .\models.py:55
+#: .\models.py:60
 msgid "Perfect"
 msgstr "عالی"
 
-#: .\models.py:63
+#: .\models.py:68
 msgid "comment author"
 msgstr "نویسنده نظر"
 
-#: .\models.py:65
+#: .\models.py:70
 msgid "comment text"
 msgstr "متن نظر"
 
-#: .\models.py:66
+#: .\models.py:71
 msgid "your score to this product"
 msgstr "امتیاز شما به این محصول"
 
-#: .\models.py:67
+#: .\models.py:72
 msgid "active"
 msgstr "فعال"
 
@@ -100,7 +88,7 @@ msgid "Edit Comment"
 msgstr "ویرایش نظر"
 
 #: .\templates\products\comment_update.html:17
-#: .\templates\products\product_detail.html:151
+#: .\templates\products\product_detail.html:147
 msgid "Edit"
 msgstr "ویرایش"
 
@@ -124,27 +112,32 @@ msgid "Add to Cart"
 msgstr "اضافه به سبد خرید"
 
 #: .\templates\products\product_detail.html:77
-msgid "Score"
-msgstr "امتیاز"
+msgid "Categories: "
+msgstr "دسته بندی ها: "
 
-#: .\templates\products\product_detail.html:92
+#: .\templates\products\product_detail.html:80
+
+msgid "Score:"
+msgstr "امتیاز:"
+
+#: .\templates\products\product_detail.html:95
 msgid "Drop your comment"
 msgstr "نظر خود را بنویسید"
 
-#: .\templates\products\product_detail.html:108
+#: .\templates\products\product_detail.html:111
 msgid "Post"
 msgstr "ارسال"
 
-#: .\templates\products\product_detail.html:112
+#: .\templates\products\product_detail.html:115
 msgid ""
 "You need to be logged in to drop comments, you can do so by clicking on "
 msgstr "شما برای ارسال نظر باید ورود کنید, شما میتوانید وارد شوید از طریق"
 
-#: .\templates\products\product_detail.html:114
+#: .\templates\products\product_detail.html:117
 msgid "Login"
 msgstr "ورود"
 
-#: .\templates\products\product_detail.html:156
+#: .\templates\products\product_detail.html:152
 msgid "Delete"
 msgstr "حذف"
 
@@ -171,6 +164,15 @@ msgstr "نظر شما با موفقیت ثبت شد"
 #: .\views.py:88
 msgid "Comment deleted successfully"
 msgstr "نظر شما با موفقیت حذف شد"
+
+#~ msgid "White Chocolate"
+#~ msgstr "شکلات سفید"
+
+#~ msgid "Dark Chocolate"
+#~ msgstr "شکلات تلخ"
+
+#~ msgid "Nuts Chocolate"
+#~ msgstr "شکلات مغزدار"
 
 #~ msgid "Related Products"
 #~ msgstr "محصولات مرتبط"

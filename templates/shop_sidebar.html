@@ -18,7 +18,7 @@
                     <ul class="category-shop-list">
                         {% for category in categories %}
                         <li>
-                        <a class="accordion-link" href="">{{ category }}<span>({{ category.products.count }})</span></a>
+                        <a class="accordion-link" href="">{{ category.get_name }}<span>({{ category.products.count }})</span></a>
                         <ul class="accordion-list-content">
                             {% for product in category.products.all %}
                             <li><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></li>
