@@ -1,3 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
+from cart.cart import Cart
+from cart.forms import AddToCartForm
+
+
+def order_create_view(request):
+
+    return render(request, 'orders/order_create.html',)
