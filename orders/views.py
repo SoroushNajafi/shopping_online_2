@@ -11,15 +11,14 @@ from .models import OrderItem
 @login_required
 def order_create_view(request):
     cart = Cart(request)
-
     order_form = OrderForm()
+
+    if len(cart) == 0:
+        messages.warning(request, _('You can not proceed to checkout since your cart is empty'))
+        return redirect('home')
 
     if request.method == 'POST':
         order_form = OrderForm(request.POST)
-
-        if len(cart) == 0:
-            messages.warning(request, _('You can not proceed to checkout since your cart is empty'))
-            return redirect('home')
 
         if order_form.is_valid():
             order_obj = order_form.save(commit=False)

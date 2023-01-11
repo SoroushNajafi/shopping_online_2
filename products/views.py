@@ -18,6 +18,7 @@ class CategoryListView(generic.ListView):
 
 class ProductsByCategoryListView(generic.ListView):
     template_name = 'products/products_by_category.html'
+    paginate_by = 3
 
     def get_queryset(self):
         category_id = int(self.kwargs['category_id'])
@@ -38,6 +39,7 @@ class ProductListView(generic.ListView):
     queryset = Product.objects.filter(active=True)
     template_name = 'products/product_list.html'
     context_object_name = 'products'
+    paginate_by = 3
 
 
 class ProductDetailView(generic.DetailView):
