@@ -10,156 +10,174 @@
 
 {% block content %}
     <div class="page-title">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10 produti">
-        <h4 style="margin: 20px">{% trans 'ORDER CREATE' %}</h4>
-      </div>
-{#      <div class="col-md-2 cart">#}
-{#        <h4><a href="#">chart (2 items)</a></h4>#}
-{#        <ul>#}
-{#          <li><a href="#">home /</a></li>#}
-{#          <li><a href="#">products</a></li>#}
-{#        </ul>#}
-{#      </div>#}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 produti">
+                    <h4 style="margin: 20px">{% trans 'ORDER CREATE' %}</h4>
+                </div>
+                {#      <div class="col-md-2 cart">#}
+                {#        <h4><a href="#">chart (2 items)</a></h4>#}
+                {#        <ul>#}
+                {#          <li><a href="#">home /</a></li>#}
+                {#          <li><a href="#">products</a></li>#}
+                {#        </ul>#}
+                {#      </div>#}
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-   <div class="col-md-12 checkout-cart">
-                  <div class="sixteen columns">
-                    <!-- Cart -->
-                    <table style="background-color: #4a3631" class="table cart-table responsive-table">
+    <div class="col-md-12 checkout-cart">
+        <div class="sixteen columns">
+            <!-- Cart -->
+            <table style="background-color: #4a3631; text-align: center" class="table cart-table responsive-table">
+                <tbody>
+                <tr>
+                    <th style="text-align: center ;background-color: #4a3631">
+                        {% trans 'Item' %}
+                    </th>
+                    <th style="text-align: center ;background-color: #4a3631">
+                        {% trans 'Description' %}
+                    </th>
+                    <th style="text-align: center ;background-color: #4a3631">
+                        {% trans 'Price' %}
+                    </th>
+                    <th style="text-align: center ;background-color: #4a3631">
+                        {% trans 'Quantity' %}
+                    </th>
+                    <th style="text-align: center ;background-color: #4a3631">
+                        {% trans 'Total' %}
+                    </th>
+                    <th style="text-align: center ;background-color: #4a3631">
+                    </th>
+                </tr>
+                <!-- Item #1 -->
+                {% for item in cart %}
+                    <tr>
+                        <td style="background-color: white">
+                            <img style="width: 100px;height: 100px" src="{{ item.product_obj.image.url }}">
+                        </td>
+                        <td style="background-color: white">
+                            <a href="{{ item.product_obj.get_absolute_url }}">{{ item.product_obj.title }}</a>
+                        </td>
+                        <td style="background-color: white">
+                            {% trans '$' %}{{ item.product_obj.price }}
+                        </td>
+                        <td style="background-color: white">
+                            {{ item.quantity }}
+                        </td>
+                        <td style="background-color: white" class="cart-total">
+                            {% trans '$' %}{{ item.total_price }}
+                        </td>
+                        <td style="background-color: white">
+                            <a href="{% url 'cart:remove_from_cart' item.product_obj.id %}" class="cart-remove"><i
+                                    class="fa fa-times"></i></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+        <div class="taxat">
+            {#                    <form action="#" method="get" class="apply-coupon">#}
+            {#                      <input class="search-field" type="text" placeholder="Coupon Code" value="">#}
+            {#                      <a href="#" class="coupon-btn checkout-btn">Apply Coupon</a>#}
+            {#                    </form>#}
+            {#                    <div class="cart-buttons">#}
+            {#                      <a href="#">Proceed to Checkout</a>#}
+            {#                      <a href="#">Update Cart</a>#}
+            {#                    </div>#}
+            <div class="col-md-6 taxes nopadding">
+                {#                      <ul>#}
+                {#                        <li><a href="#">shipping &amp; taxes</a></li>#}
+                {#                      </ul>#}
+                <div class="col-md-10 produti">
+                    <h4 style="color: #4a3631">
+                        {% trans 'Billing Information' %}
+                    </h4>
+                </div>
+                <hr>
+                <div>
+                    <form action="" method="post" class="form-horizontal" role="form">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <input name="first_name" type="text" class="form-control" placeholder="First name">
+                                <div class="alert-warning">
+                                {{ order_form.first_name.errors }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <input name="last_name" type="text" class="form-control" placeholder="Last name">
+                                <div class="alert-warning">
+                                {{ order_form.last_name.errors }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <input name="phone_number" type="tel" class="form-control" placeholder="Phone number">
+                                <div class="alert-warning">
+                                {{ order_form.phone_number.errors }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <textarea name="address" id="" cols="30" rows="2" class="form-control"
+                                          placeholder="Address"></textarea>
+                                <div class="alert-warning">
+                                {{ order_form.address.errors }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <textarea name="order_notes" id="" cols="30" rows="5" class="form-control"
+                                          placeholder="Your note"></textarea>
+                            </div>
+                        </div>
+                        <button style="background-color: #4a3631; color: white" type="submit"
+                                class="btn-lg">{% trans 'Submit' %}</button>
+                    </form>
+                </div>
+            </div>
+            <!-- Cart Totals -->
+            <div class="col-md-6 eight columns cart-totals">
+                <table class="table cart-table test">
                     <tbody>
                     <tr>
-                      <th style="background-color: #4a3631">
-                         {% trans 'Item' %}
-                      </th>
-                      <th style="background-color: #4a3631">
-                         {% trans 'Description' %}
-                      </th>
-                      <th style="background-color: #4a3631">
-                         {% trans 'Price' %}
-                      </th>
-                      <th style="background-color: #4a3631">
-                         {% trans 'Quantity' %}
-                      </th>
-                      <th style="background-color: #4a3631">
-                         {% trans 'Total' %}
-                      </th>
-                      <th style="background-color: #4a3631">
-                      </th>
+                        <th>
+                            {% trans 'Cart Subtotal' %}
+                        </th>
+                        <td>
+                            <strong>{% trans '$' %}{{ cart.get_total_price|translate_number|intcomma }}</strong>
+                        </td>
                     </tr>
-                    <!-- Item #1 -->
-                    {% for item in cart %}
                     <tr>
-                      <td style="background-color: white">
-                        <img style="width: 100px;height: 100px" src="{{ item.product_obj.image.url }}">
-                      </td>
-                      <td style="background-color: white">
-                        <a href="{{ item.product_obj.get_absolute_url }}">{{ item.product_obj.title }}</a>
-                      </td>
-                      <td style="background-color: white">
-                         {% trans '$' %}{{ item.product_obj.price }}
-                      </td>
-                      <td style="background-color: white">
-                        {{ item.quantity }}
-                      </td>
-                      <td style="background-color: white" class="cart-total">
-                         {% trans '$' %}{{ item.total_price }}
-                      </td>
-                      <td style="background-color: white">
-                        <a href="{% url 'cart:remove_from_cart' item.product_obj.id %}" class="cart-remove"><i class="fa fa-times"></i></a>
-                      </td>
+                        <th>
+                            {% trans 'Shipping and Handling' %}
+                        </th>
+                        <td>
+                            {% trans 'Free Shipping' %}
+                        </td>
                     </tr>
-                    {% endfor %}
-
+                    <tr>
+                        <th>
+                            {% trans 'Order Total' %}
+                        </th>
+                        <td>
+                            <strong>{% trans '$' %}{{ cart.get_total_price|translate_number|intcomma }}</strong>
+                        </td>
+                    </tr>
                     </tbody>
-                    </table>
-                  </div>
-                  <div class="taxat">
-{#                    <form action="#" method="get" class="apply-coupon">#}
-{#                      <input class="search-field" type="text" placeholder="Coupon Code" value="">#}
-{#                      <a href="#" class="coupon-btn checkout-btn">Apply Coupon</a>#}
-{#                    </form>#}
-{#                    <div class="cart-buttons">#}
-{#                      <a href="#">Proceed to Checkout</a>#}
-{#                      <a href="#">Update Cart</a>#}
-{#                    </div>#}
-                    <div class="col-md-6 taxes nopadding">
-{#                      <ul>#}
-{#                        <li><a href="#">shipping &amp; taxes</a></li>#}
-{#                      </ul>#}
-                        <div class="col-md-10 produti">
-                      <h4 style="color: #4a3631">
-                         {% trans 'Billing Information' %}
-                      </h4>
-                        </div>
-                        <hr>
-                      <div>
-                        <form class="form-horizontal" role="form">
-                          <div class="form-group">
-                            <div class="col-sm-12">
-                              <input name="first_name" type="text" class="form-control" placeholder="First name">
-                            </div>
-                          </div>
-                            <div class="form-group">
-                            <div class="col-sm-12">
-                              <input name="last_name" type="text" class="form-control" placeholder="Last name">
-                            </div>
-                          </div>
-                            <div class="form-group">
-                            <div class="col-sm-12">
-                              <input name="phone_number" type="tel" class="form-control" placeholder="Phone number">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="col-sm-12">
-                              <input name="address" type="text" class="form-control" placeholder="address">
-                            </div>
-                          </div>
-                            <div class="form-group">
-                            <div class="col-sm-12">
-                                <textarea name="order_notes" id="" cols="30" rows="5" class="form-control" placeholder="Your note"></textarea>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                    <!-- Cart Totals -->
-                    <div class="col-md-6 eight columns cart-totals">
-                      <table class="table cart-table test">
-                      <tbody>
-                      <tr>
-                        <th>
-                           {% trans 'Cart Subtotal' %}
-                        </th>
-                        <td>
-                          <strong>{% trans '$' %}{{ cart.get_total_price|translate_number|intcomma }}</strong>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>
-                           {% trans 'Shipping and Handling' %}
-                        </th>
-                        <td>
-                           {% trans 'Free Shipping' %}
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>
-                           {% trans 'Order Total' %}
-                        </th>
-                        <td>
-                          <strong>{% trans '$' %}{{ cart.get_total_price|translate_number|intcomma }}</strong>
-                        </td>
-                      </tr>
-                      </tbody>
-                      </table>
-                      <br>
-                      <a href="#" class="calculate-shipping">{% trans 'Checkout' %}</a>
-                    </div>
-                  </div>
-                </div>
+                </table>
+                <br>
+                {#                      <a href="#" class="calculate-shipping">{% trans 'Checkout' %}</a>#}
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 

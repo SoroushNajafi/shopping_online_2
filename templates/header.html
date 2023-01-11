@@ -80,7 +80,7 @@
                             {% endfor %}
                         </ul>
                     </li>
-                    <li><a href="{% url 'cart:cart_detail' %}">{% trans 'Cart' %}</a></li>
+                    <li><a href="{% url 'cart:cart_detail' %}">{% trans 'Cart' %}({{ cart|length }})</a></li>
                     <li><a href="{% url 'aboutus' %}">{% trans 'About us' %}</a></li>
                     <li><a href="{% url 'contactus' %}">{% trans 'Contact Us' %}</a></li>
                 </ul>
