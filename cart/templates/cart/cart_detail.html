@@ -9,6 +9,9 @@
 {% block content %}
     <div class="container checking-area">
         <div class="row">
+         <div class="col-md-10 produti">
+                    <h4 style="margin: 20px">{% trans 'Cart Detail' %}</h4>
+                </div>
             <div class="col-md-9 cart-area">
                 <div class="sixteen columns cart-section oflow">
                     <!-- Cart -->
@@ -34,9 +37,7 @@
                                 </th>
                             </tr>
                         {% else %}
-                            <p>{% trans 'Cart is empty!' %}<a href="{% url 'product_list' %}">
-                               {% trans 'Go Shopping' %}
-                            </a></p>
+                            <b>{% trans 'Cart is empty!' %}</b>
                         {% endif %}
                         {% for item in cart %}
                             <tr>
@@ -79,15 +80,19 @@
                         {% endfor %}
                     </table>
                     <a style="text-decoration: none" href="{% url 'product_list' %}">
-                        <button class="btn" ,
-                                style="background-color: #6d534c; color: white">{% translate 'Back to Shoplist' %}</button>
+                        <button class="btn" style="background-color: #6d534c; color: white">{% translate 'Back to Shoplist' %}</button>
                     </a>
+                {% if cart %}
+                <a style="text-decoration: none" href="{% url 'cart:cart_clear' %}">
+                        <button class="btn" style="background-color: #6d534c; color: white">{% translate 'Empty Cart' %}</button>
+                    </a>
+                {% endif %}
                 </div>
                 <div class="taxat">
-                    <form action="#" method="get" class="apply-coupon">
-                        <input class="search-field" type="text" placeholder="Coupon Code" value="">
-                        <a href="#" class="coupon-btn checkout-btn">{% trans 'Apply Coupon' %}</a>
-                    </form>
+{#                    <form action="#" method="get" class="apply-coupon">#}
+{#                        <input class="search-field" type="text" placeholder="Coupon Code" value="">#}
+{#                        <a href="#" class="coupon-btn checkout-btn">{% trans 'Apply Coupon' %}</a>#}
+{#                    </form>#}
                     <div class="col-md-6 eight columns cart-totals">
                         <table class="table cart-table test">
                             <tbody>

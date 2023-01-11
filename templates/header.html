@@ -1,6 +1,7 @@
 {% load i18n %}
 {% load static %}
 {% load path_modifier %}
+{% load persian_translation_tags %}
 <!--top-strip-->
 <div class="top-strip">
     <div class="container">
@@ -80,7 +81,7 @@
                             {% endfor %}
                         </ul>
                     </li>
-                    <li><a href="{% url 'cart:cart_detail' %}">{% trans 'Cart' %}({{ cart|length }})</a></li>
+                    <li><a href="{% url 'cart:cart_detail' %}">{% trans 'Cart' %}({{ cart|length|translate_number }})</a></li>
                     <li><a href="{% url 'aboutus' %}">{% trans 'About us' %}</a></li>
                     <li><a href="{% url 'contactus' %}">{% trans 'Contact Us' %}</a></li>
                 </ul>

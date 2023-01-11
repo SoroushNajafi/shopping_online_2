@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-11 12:39+0330\n"
+"PO-Revision-Date: 2023-01-11 08:50+0000\n"
+"Last-Translator: soroush najafi <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: .\templates\orders\order_create.html:9
+msgid "Order Create"
+msgstr "ثبت سفارش"
+
+#: .\templates\orders\order_create.html:16
+msgid "ORDER CREATE"
+msgstr "ثبت سفارش"
+
+#: .\templates\orders\order_create.html:35
+msgid "Product Image"
+msgstr "تصویر محصول"
+
+#: .\templates\orders\order_create.html:38
+msgid "Title"
+msgstr "عنوان"
+
+#: .\templates\orders\order_create.html:41
+msgid "Price"
+msgstr "قیمت"
+
+#: .\templates\orders\order_create.html:44
+msgid "Quantity"
+msgstr "تعداد"
+
+#: .\templates\orders\order_create.html:47
+msgid "Total"
+msgstr "جمع"
+
+#: .\templates\orders\order_create.html:62
+#: .\templates\orders\order_create.html:68
+#: .\templates\orders\order_create.html:155
+#: .\templates\orders\order_create.html:171
+msgid "$"
+msgstr "دلار"
+
+#: .\templates\orders\order_create.html:95
+msgid "Billing Information"
+msgstr "اطلاعات صورت حساب"
+
+#: .\templates\orders\order_create.html:142
+msgid "Submit"
+msgstr "ارسال"
+
+#: .\templates\orders\order_create.html:152
+msgid "Cart Subtotal"
+msgstr "جمع سبد خرید"
+
+#: .\templates\orders\order_create.html:160
+msgid "Shipping and Handling"
+msgstr "حمل و نقل "
+
+#: .\templates\orders\order_create.html:163
+msgid "Free Shipping"
+msgstr "حمل و نقل رایگان"
+
+#: .\templates\orders\order_create.html:168
+msgid "Order Total"
+msgstr "مجموع سفارش"
+
+#: .\views.py:21
+msgid "You can not proceed to checkout since your cart is empty"
+msgstr "از آنجایی که سبد خرید شما خالی است، نمی توانید به پرداخت ادامه دهید"
+
+#: .\views.py:37
+msgid "Your Order has been submitted"
+msgstr "سفارش شما ارسال شد"
+
+#~ msgid "Item"
+#~ msgstr "محصول"
