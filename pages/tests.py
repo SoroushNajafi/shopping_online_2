@@ -4,7 +4,7 @@ from django.shortcuts import reverse
 
 class HomePageTest(TestCase):
     def test_home_page_url(self):
-        response = self.client.get('/')
+        response = self.client.get('/en/')
         self.assertEqual(response.status_code, 200)
 
     def test_home_page_url_reverse(self):
@@ -23,7 +23,7 @@ class HomePageTest(TestCase):
 class AboutUsPageTest(TestCase):
 
     def test_about_us_page_url(self):
-        response = self.client.get('/aboutus/')
+        response = self.client.get('/en/aboutus/')
         self.assertEqual(response.status_code, 200)
 
     def test_about_us_page_url_reverse(self):

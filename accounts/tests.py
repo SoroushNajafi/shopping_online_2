@@ -6,7 +6,7 @@ from django.contrib.auth import get_user_model
 class LoginPageTest(TestCase):
 
     def test_login_page_by_url(self):
-        response = self.client.get('/accounts/login/')
+        response = self.client.get('/en/accounts/login/')
         self.assertEqual(response.status_code, 200)
 
     def test_login_page_reverse(self):
@@ -28,8 +28,8 @@ class LoginPageTest(TestCase):
             password='password123456789',
         )
 
-        response = self.client.post('/accounts/login/', {'password': 'password123456789',
-                                                         'login': 'testing@gmail.com'})
+        response = self.client.post('/en/accounts/login/', {'password': 'password123456789',
+                                                            'login': 'testing@gmail.com'})
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse('home'))
 
@@ -37,7 +37,7 @@ class LoginPageTest(TestCase):
 class SignupPageTest(TestCase):
 
     def test_signup_page_url(self):
-        response = self.client.get('/accounts/signup/')
+        response = self.client.get('/en/accounts/signup/')
         self.assertEqual(response.status_code, 200)
 
     def test_signup_page_reverse(self):
@@ -53,9 +53,9 @@ class SignupPageTest(TestCase):
         self.assertTemplateUsed(response, 'account/signup.html')
 
     def test_signup_redirect(self):
-        response = self.client.post('/accounts/signup/', {'email': 'sample_test@gmail.com',
-                                                          'password1': 'pass1234sample',
-                                                          'password2': 'pass1234sample', })
+        response = self.client.post('/en/accounts/signup/', {'email': 'sample_test@gmail.com',
+                                                             'password1': 'pass1234sample',
+                                                             'password2': 'pass1234sample', })
 
         self.assertEqual(get_user_model().objects.all().count(), 1)
         self.assertEqual(get_user_model().objects.all()[0].email, 'sample_test@gmail.com')
@@ -72,11 +72,11 @@ class LogoutPageTest(TestCase):
             email='testing@gmail.com',
             password='password123456789',
         )
-        self.client.post('/accounts/login/', {'password': 'password123456789',
-                                              'login': 'testing@gmail.com'})
+        self.client.post('/en/accounts/login/', {'password': 'password123456789',
+                                                 'login': 'testing@gmail.com'})
 
     def test_logout_page_by_url(self):
-        response = self.client.get('/accounts/logout/')
+        response = self.client.get('/en/accounts/logout/')
         self.assertEqual(response.status_code, 200)
 
     def test_logout_page_reverse(self):
@@ -92,6 +92,6 @@ class LogoutPageTest(TestCase):
         self.assertTemplateUsed(response, 'account/logout.html')
 
     def test_logout_redirect(self):
-        response = self.client.post('/accounts/logout/')
+        response = self.client.post('/en/accounts/logout/')
 
         self.assertRedirects(response, reverse('home'))
