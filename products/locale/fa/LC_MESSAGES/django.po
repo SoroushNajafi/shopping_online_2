@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-17 16:06+0330\n"
+"POT-Creation-Date: 2023-01-13 11:35+0330\n"
 "PO-Revision-Date: 2023-01-11 08:51+0000\n"
 "Last-Translator: soroush najafi <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -102,8 +102,8 @@ msgid "Product Detail"
 msgstr "جزییات محصول"
 
 #: .\templates\products\product_detail.html:51
-#: .\templates\products\product_list.html:44
-#: .\templates\products\products_by_category.html:43
+#: .\templates\products\product_list.html:46
+#: .\templates\products\products_by_category.html:45
 msgid "$"
 msgstr "دلار"
 
@@ -148,6 +148,16 @@ msgstr "لیست محصولات"
 msgid "Products"
 msgstr "محصولات"
 
+#: .\templates\products\product_list.html:26
+#: .\templates\products\products_by_category.html:25
+msgid "PRE"
+msgstr "قبل"
+
+#: .\templates\products\product_list.html:30
+#: .\templates\products\products_by_category.html:29
+msgid "NEXT"
+msgstr "بعد"
+
 #: .\templates\products\products_by_category.html:4
 msgid "Products by Category list"
 msgstr "محصولات بر اساس دسنه بندی"
@@ -156,11 +166,11 @@ msgstr "محصولات بر اساس دسنه بندی"
 msgid "Products by Category"
 msgstr "محصولات بر اساس دسنه بندی"
 
-#: .\views.py:64
+#: .\views.py:66
 msgid "Your comment successfully submitted"
 msgstr "نظر شما با موفقیت ثبت شد"
 
-#: .\views.py:88
+#: .\views.py:90
 msgid "Comment deleted successfully"
 msgstr "نظر شما با موفقیت حذف شد"
 
