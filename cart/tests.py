@@ -57,21 +57,28 @@ class AddToCartTest(TestCase):
         )
         self.product = product
 
-        # self.cart.add(product=product)
-
     def test_add_to_cart_url(self):
-        request = self.client.get('/en/').wsgi_request
-        cart = Cart(request)
-        response = self.client.post(f'/en/cart/add/{self.product.id}/')
+        response = self.client.post(f'/en/cart/add/{self.product.id}/', follow=True)
+        request = response.wsgi_request
+        self.assertEqual(len(Cart(request)), 1)
+        messages = list(response.context['messages'])
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]), 'Product successfully added to Cart')
         self.assertEqual(response.status_code, 302)
-        # self.assertEqual(len(cart), 1)
 
     def test_add_to_cart_reverse(self):
-        request = self.client.get('/en/').wsgi_request
-        cart = Cart(request)
         response = self.client.post(reverse('cart:add_to_cart', args=[self.product.id]))
+        request = response.wsgi_request
         self.assertEqual(response.status_code, 302)
-        # self.assertEqual(len(cart), 1)
+        self.assertEqual(len(Cart(request)), 1)
+        messages = list(response.context['messages'])
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]), 'Product successfully added to Cart')
+
+    def test_add_to_cart_content(self):
+        self.client.post(reverse('cart:add_to_cart', args=[self.product.id]))
+        response = self.client.get(reverse('cart:cart_detail'))
+        self.assertContains(response, 'product_title')
 
 
 class RemoveFromCartTest(TestCase):

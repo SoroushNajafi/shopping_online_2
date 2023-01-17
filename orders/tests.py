@@ -19,7 +19,6 @@ class OrderDetailTest(TestCase):
         )
         self.product = product
 
-    def test_order_detail_page_by_url(self):
         user = get_user_model().objects.create_user(
             username='sample',
             email='testing@gmail.com',
@@ -28,10 +27,10 @@ class OrderDetailTest(TestCase):
 
         self.client.post('/en/accounts/login/', {'password': 'password123456789',
                                                  'login': 'testing@gmail.com'})
-        request = self.client.get('/en/').wsgi_request
-        cart = Cart(request)
-        self.cart = cart
-        self.cart.add(product=self.product)
+
+    def test_order_detail_page_by_url(self):
+        self.client.post(reverse('cart:add_to_cart', args=[self.product.id]))
+
         response = self.client.get('/en/order/create/')
         self.assertEqual(response.status_code, 200)
 
