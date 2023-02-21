@@ -1,6 +1,8 @@
 {% extends '_base.html' %}
 {% load static %}
 {% load i18n %}
+{% load humanize %}
+{% load persian_translation_tags %}
 {% block page_title %}{% trans 'Products by Category list' %}{% endblock %}
 
 {% block content %}
@@ -42,7 +44,7 @@
                         <a href="{{ product.get_absolute_url }}"><span>
                         {{ product.title }} </span></a>
                         <p>
-                             {% translate '$' %} {{ product.price }}
+                             {% translate 'T' %} {{ product.price|intcomma|translate_number }}
                         </p>
                     </div>
                 </div>

@@ -11,8 +11,9 @@ services:
     depends_on:
       - db
     environment:
-      - "DJANGO_SECRET_KEY=django-insecure-5e0+yveq!o9+-1cvl0kg0u%&)i0o69h#f2(6ax2v8pojr^*3j-"
-      - "DJANGO_DEBUG=True"
+      - "DJANGO_SECRET_KEY=${DOCKER_COMPOSE_DJANGO_SECRET_KEY}"
+      - "DJANGO_DEBUG=${DOCKER_COMPOSE_DJANGO_DEBUG}"
+      - "DJANGO_ZARINPAL_MERCHANT_ID=${DOCKER_COMPOSE_DJANGO_ZARINPAL_MERCHANT_ID}"
 
   db:
     image: postgres:14

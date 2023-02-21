@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'products',
     'cart.apps.CartConfig',
     'orders',
+    'payment',
 ]
 
 SITE_ID = 1
@@ -200,3 +201,5 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MESSAGE_TAGS = {
     constants.ERROR: 'danger',
 }
+
+ZARINPAL_MERCHANT_ID = env('DJANGO_ZARINPAL_MERCHANT_ID')

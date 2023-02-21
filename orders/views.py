@@ -33,10 +33,12 @@ def order_create_view(request):
                     price=item['product_obj'].price,
                 )
             cart.clear()
-            messages.success(request, _('Your Order has been submitted'))
 
             request.user.first_name = order_obj.first_name
             request.user.last_name = order_obj.last_name
             request.user.save()
+
+            request.session['order_id'] = order_obj.id
+            return redirect('payment:payment_process')
 
     return render(request, 'orders/order_create.html', {'order_form': order_form})
